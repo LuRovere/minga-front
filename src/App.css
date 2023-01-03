@@ -1,14 +1,19 @@
-
 .navBarcito{
   display: flex;
   justify-content: space-between;
   padding: 25px;
+  position: absolute;
+  width: 100%;
+  background-color: rgba(105, 105, 105, 0.164);
+}
+a{
+  text-decoration: none;
 }
 .opciones{
   display: flex;
   flex-direction: column;
+  color: white;
 }
-
 
 .section{
     height: 100vh;

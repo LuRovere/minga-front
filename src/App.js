@@ -1,6 +1,3 @@
-
-import Navbar from './layouts/Navbar';
-
 import { RouterProvider } from 'react-router-dom';
 import router from './services/routes'
 import './App.css';

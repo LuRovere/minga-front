@@ -20,8 +20,8 @@ const Navbar = () => {
         {
             variable ?(
             <div className='opciones'>
-            <a href=''>Comics</a>
-            <a href=''>Iniciar Sesion</a>
+            <a href='#'>Comics</a>
+            <a href='#'>Iniciar Sesion</a>
         </div>
             )
             : null
