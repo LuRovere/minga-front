@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Form, Input } from '../components'
+import { Form } from '../components'
 import postData from '../services/postData'
 
 const NewAuthor = () => {
@@ -26,11 +26,11 @@ const NewAuthor = () => {
   return (
     <div>
       <Form handler={_handleSubmit}>
-        <Input type="text" name="name" placeholder="Insert name here..." reference={inputName} />
-        <Input type="text" name="last-name" placeholder="Insert last name here..." reference={inputLastName} />
-        <Input type="text" name="address" placeholder="Insert address here... (city, country)" reference={inputAddress} />
-        <Input type="date" name="birth" placeholder="birthday" reference={inputBirthday} />
-        <Input type="text" name="image" placeholder="Insert image url here..." reference={inputImageUrl} />
+        <input type="text" name="name" placeholder="Insert name here..." ref={inputName} />
+        <input type="text" name="last-name" placeholder="Insert last name here..." ref={inputLastName} />
+        <input type="text" name="address" placeholder="Insert address here... (city, country)" ref={inputAddress} />
+        <input type="date" name="birth" placeholder="birthday" ref={inputBirthday} />
+        <input type="text" name="image" placeholder="Insert image url here..." ref={inputImageUrl} />
       </Form>
     </div>
   )
