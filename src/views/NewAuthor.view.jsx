@@ -58,6 +58,10 @@ const NewAuthor = () => {
   }
   return (
     <div>
+      <h1>New Author</h1>
+      <div>
+        
+      </div>
       <Form handler={_handleSubmit}>
         <input type="text" name="name" placeholder="Insert name here..." value={inputName} onChange={(e) => setInputName(e.target.value)} />
         <input type="text" name="last-name" placeholder="Insert last name here..." value={inputLastName} onChange={(e) => setInputLastName(e.target.value)} />
