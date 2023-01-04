@@ -20,15 +20,15 @@ const Navbar = () => {
         {
             variable ?(
             <div className='opciones'>
-            <a href='#'>Comics</a>
-            <a href='#'>Iniciar Sesion</a>
+            <a className='comi' href='#'>Comics</a>
+            <a className='comi' href='#'>Iniciar Sesion</a>
         </div>
             )
             : null
         }
         </div>
         <div className='derecha'>
-        <a href=''><img src='./assets/images/Logo.png'/></a>
+        <a href=''><img className='logo' src='./assets/images/Logo.png'/></a>
         </div>
     </div>
     )
