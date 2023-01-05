@@ -242,3 +242,46 @@ justify-content: center;
     background-color: #1e1e1e62;
     color: white;
 }
+
+/*/////////////////////////////////////////////Form Comics*/
+
+.select{
+    width: 50%;
+    margin: 10px;
+}
+
+.categorias{
+    display: flex;
+    align-items: baseline;
+    width: 100%;
+}
+
+.flecha{
+    width: 10px;
+    height: 10px;
+}
+
+.formComic{
+    display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+}
+
+.editarcomic{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.inputComic{
+    background: #1e1e1e00;
+    font-size: 15px;
+    display: flex;
+    justify-content:  center;
+    margin-top: 15px;
+    border: transparent;
+    border-bottom: 1px solid black;
+}
