@@ -6,7 +6,7 @@ const Form = ({children, handler}) => {
       {
         children
       }
-      <input type="submit" value="Crear 😊" />
+      <input type="submit" value="Create 😊" />
     </form>
   )
 }
