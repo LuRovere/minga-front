@@ -44,7 +44,7 @@ const CreateComic = () => {
          
              <label htmlFor="titulo">
                     
-             <input className="inputComic"
+             <input className="inputChapter"
               type="text" 
               id="titulo"
               placeholder="Insert title" 
@@ -63,7 +63,7 @@ const CreateComic = () => {
             </select>
             </label>
              <label htmlFor="Descripcion">
-             <input className="inputComic"
+             <input className="inputChapter"
               type="text" 
               id="descripcion"
               placeholder="Insert description"
@@ -72,7 +72,7 @@ const CreateComic = () => {
               />
              </label>
              <label htmlFor="Foto de Portada">
-             <input className="inputComic"
+             <input className="inputChapter"
               type="text" 
               id="fotoPortada"
               placeholder="Insert cover photo"
