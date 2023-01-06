@@ -1,2 +1,2 @@
 export { default as Home } from './Home.view'
-export {default as CreateChapter} from './CreateChapter.view'
+export {default as NewChapter} from './NewChapter.view'

@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/layout";
-import { Home, CreateChapter } from '../views'
+import { Home, NewChapter } from '../views'
 
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       },
       {
         path:'/create-chapter',
-        element:<CreateChapter/>
+        element:<NewChapter/>
       }
     ]
   }
