@@ -1,6 +1,8 @@
 import React, { useRef } from "react";
 import { Form } from "../components";
 import postData from "../services/postData";
+import { useDispatch } from "react-redux";
+import alertActions from "../store/minga-alert/actions";
 
 
 
@@ -9,6 +11,9 @@ const CreateChapter = () => {
     const inputTitle = useRef("")
     const inputPages = useRef("")
     const inputOrder = useRef("")
+
+    const { mingaAlert } = alertActions;
+	const dispatch = useDispatch();
 
     let handleSubmit = async(e) =>{
         e.preventDefault()
@@ -20,6 +25,15 @@ const CreateChapter = () => {
         }
         const response = await postData("http://localhost:8080/api/chapters", data)
         console.log(response)
+        if(!response.success) {
+            if(typeof response.response === "object"){
+                dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
+			return false
+            }
+			dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }))
+			return false
+		}
+		dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }));
     }
     
 
