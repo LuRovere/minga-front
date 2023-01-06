@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from './footer.layout'
+import Footer from './Footer.layout'
 import Navbar from './Navbar'
 import { useSelector, useDispatch } from "react-redux";
 import alertActions from "../store/minga-alert/actions";
@@ -12,18 +12,18 @@ const Layout = () => {
   const dispatch = useDispatch()
   const { mingaAlert } = alertActions
   const MySwal = withReactContent(Swal);
-  useEffect(() => {
-    console.log(status)
-    if(visible) {
-      MySwal.fire({
-        title: <p>{message}</p>,
-        didClose: () => {
-          dispatch(mingaAlert({ message: "", visible: false }));
-        },
-        icon: status ? 'success' : 'error',
-      })  
-    }
-  },[visible])
+  function alert(bool) {
+      bool &&(
+        MySwal.fire({
+          title: <p>{message}</p>,
+          didClose: () => {
+            dispatch(mingaAlert({ message: "", visible: false, status: false }));
+          },
+          icon: status ? 'success' : 'error',
+        })
+      )
+  }
+  alert(visible)
   return (
     <>
       <Navbar />

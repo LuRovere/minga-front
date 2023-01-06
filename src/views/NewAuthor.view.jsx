@@ -23,8 +23,12 @@ const NewAuthor = () => {
 			date: inputBirthday.current.value,
 			photo: inputImageUrl.current.value
 		}
-		// const response = await postData('http://localhost:8080/api/authors/', {...data, user_id: '63b58ab5f67ecbbe4fe5d0d8'})
-		await dispatch(mingaAlert({ message: "Holi mami uwu", visible: true, status: false }));
+		const response = await postData('http://localhost:8080/api/authors/', {...data, user_id: '63b58ab5f67ecbbe4fe5d0d8'})
+		if(!response.success) {
+			dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
+			return false
+		}
+		dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }));
 	};
 	return (
 		<div>
