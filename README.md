@@ -9,6 +9,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - node modules:`npm install`
 - redux toolkit:`npm install @reduxjs/toolkit`
 - react reduce: `npm install react-redux`
+- react router: `npm install react-router-dom`
 
 In the project directory, you can run:
 
