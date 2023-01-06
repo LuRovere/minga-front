@@ -31,40 +31,60 @@ const NewAuthor = () => {
 		dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }));
 	};
 	return (
-		<div>
-			<h3>New Author</h3>
-			<div></div>
+		<div className="chapter">
 			<Form handler={_handleSubmit}>
-				<input
-					type='text'
-					name='name'
-					placeholder='Insert name here...'
-					ref={inputName}
-				/>
-				<input
-					type='text'
-					name='last-name'
-					placeholder='Insert last name here...'
-					ref={inputLastName}
-				/>
-				<input
-					type='text'
-					name='address'
-					placeholder='Insert address here... (city, country)'
-					ref={inputAddress}
-				/>
-				<input
-					type='date'
-					name='birth'
-					placeholder='birthday'
-					ref={inputBirthday}
-				/>
-				<input
-					type='text'
-					name='image'
-					placeholder='Insert image url here...'
-					ref={inputImageUrl}
-				/>
+				<h1 className="chapterTitulo">New Author</h1>
+				<div></div>
+				<label htmlFor="name">
+					<input
+						type='text'
+						name='name'
+						id="name"
+						className='inputChapter'
+						placeholder='Insert name here...'
+						ref={inputName}
+					/>
+				</label>
+				<label htmlFor="last-name">
+					<input
+						type='text'
+						name='last-name'
+						id='last-name'
+						className='inputChapter'
+						placeholder='Insert last name here...'
+						ref={inputLastName}
+					/>
+				</label>
+				<label htmlFor="address">
+					<input
+						type='text'
+						name='address'
+						id='address'
+						className='inputChapter'
+						placeholder='Insert address here... (city, country)'
+						ref={inputAddress}
+					/>
+				</label>
+				<label htmlFor="birth">
+					<input
+						type='date'
+						name='birth'
+						id='birth'
+						className='inputChapter'
+						placeholder='birthday'
+						ref={inputBirthday}
+					/>
+				</label>
+				<label htmlFor="image">
+					<input
+						type='text'
+						name='image'
+						id='image'
+						className='inputChapter'
+						placeholder='Insert image url here...'
+						ref={inputImageUrl}
+					/>
+				</label>
 			</Form>
 		</div>
 	);
