@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/layout";
-import { Home, CreateChapter, CreateComic } from '../views'
+import { Home, CreateComic } from '../views'
 
 
 const router = createBrowserRouter([
@@ -13,11 +13,7 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path:'/create-chapter',
-        element:<CreateChapter/>
-      },
-      {
-        path: '/create-comic',
+        path: '/new-comic',
         element: <CreateComic/>
       }
     ]
