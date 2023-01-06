@@ -5,7 +5,8 @@ const { mingaAlert } = alertActions
 
 const initialState = {
   message: '',
-  visible: false
+  visible: false,
+  status: false
 }
 
 const alertReducer = createReducer(
@@ -13,10 +14,10 @@ const alertReducer = createReducer(
   (builder) => {
     builder
       .addCase(mingaAlert, (state, action) => {
-        console.log(action)
         const newState = {
           message: action.payload.message,
-          visible: action.payload.visible
+          visible: action.payload.visible,
+          status: action.payload.status
         }
         return newState
       })
