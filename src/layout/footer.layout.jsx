@@ -8,7 +8,7 @@ const Footer = () => {
     <div className='suscribite'>
       <h2>Suscribite Master</h2>
     <form className='form' action="">
-      <input className='input' type="text" placeholder='Enter your Email' />
+      <input className='inputFooter' type="text" placeholder='Enter your Email' />
       <button>Suscribe now</button>
     </form>
       
