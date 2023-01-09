@@ -5,7 +5,7 @@ import { Form } from "../components";
 import postData from "../services/postData";
 
 
-const CreateComic = () => {
+const NewComic = () => {
     const inputTitle = useRef("")
     const inputDescription = useRef("")
     const inputCoverPhoto = useRef("")
@@ -84,4 +84,4 @@ const CreateComic = () => {
     </div>
      )
     }
- export default CreateComic
+ export default NewComic

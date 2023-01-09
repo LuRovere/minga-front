@@ -297,6 +297,10 @@ label{
       border: transparent;
       border-bottom: 1px solid black;
       width: 100%;
+      outline: none;
+  }
+  .inputChapter[type="date"] {
+    width: 205px;
   }
   .enviar{
       margin: 40px;
@@ -310,7 +314,3 @@ label{
       margin-right: 30px;
       
   }
-
-/*/////////////////////////////////////////////Form Comics*/
-
-

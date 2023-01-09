@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../layout/layout";
-import { Home, CreateComic } from '../views'
-
+import Layout from "../layout/Layout";
+import { Home, NewAuthor, NewComic } from '../views'
 
 const router = createBrowserRouter([
   {
@@ -13,8 +12,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
+        path: '/new-author',
+        element: <NewAuthor />
+      },
+      {
         path: '/new-comic',
-        element: <CreateComic/>
+        element: <NewComic/>
       }
     ]
   }
