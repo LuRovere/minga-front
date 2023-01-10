@@ -17,6 +17,7 @@ const ComicsView = () =>{
             <button className="button3">Shōjo</button>
             <button className="button4">Kodomo</button>
          </div>
+         
          <div className="card">
             <div className="textoCard">
                 <h2 className="tituloCard">Superman Comic</h2>
