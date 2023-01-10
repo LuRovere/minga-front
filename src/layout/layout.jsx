@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from './footer.layout'
+import Footer from './Footer.layout'
 import Navbar from './Navbar'
 import { useSelector, useDispatch } from "react-redux";
 import alertActions from "../store/minga-alert/actions";
@@ -8,7 +8,6 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const Layout = () => {
-
   const { visible, message, status } = useSelector((store) => store.alert)
   const dispatch = useDispatch()
   const { mingaAlert } = alertActions
@@ -25,7 +24,6 @@ const Layout = () => {
       )
   }
   alert(visible)
-
   return (
     <>
       <Navbar />
