@@ -21,7 +21,7 @@ const CreateChapter = () => {
             comic_id: "63ac47d8b4db2f7baacad498",
             title: inputTitle.current.value,
             pages:inputPages.current.value.split(",") ,
-            order: inputOrder.current.value
+            order: parseInt(inputOrder.current.value)
         }
         const response = await postData("http://localhost:8080/api/chapters", data)
         console.log(response)
