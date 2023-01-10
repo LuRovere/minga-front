@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { Home, NewAuthor, NewComic, NewChapter } from '../views'
+import { Home, NewAuthor, NewComic, NewChapter, Pages } from '../views'
 
 const router = createBrowserRouter([
   {
@@ -22,6 +22,10 @@ const router = createBrowserRouter([
       {
         path:'/new-chapter',
         element:<NewChapter/>
+      },
+      {
+        path: '/pages',
+        element: <Pages />
       }
     ]
   }
