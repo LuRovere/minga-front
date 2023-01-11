@@ -4,11 +4,11 @@ const Home = () => {
     
     <div className="section">
       <span className="anuncio">
-        Anunciamos nuestra próxima ronda de financiación. <a>Leer más →</a>
+      We announce our next round of funding. <a>Read more →</a>
       </span>
-      <h1>Tu tienda de comics favorita</h1>
-      <p>Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-      <a className="button-started" href="#main">Empezar → </a>
+      <h1>Your favorite comic shop</h1>
+      <p className="lorem">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+      <a className="button-started" href="#main">Start → </a>
     </div>
   )
 }

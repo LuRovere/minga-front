@@ -50,7 +50,7 @@ const NewComic = () => {
               ref={inputTitle}
               />
              </label>
-            <label>
+            <label className="labelComic">
             <select name="select" className="seleccion" defaultValue={""} ref = {inputCategory} >
                 <option value="">Insert category</option>
                 <option value="63b43895ad64747abfa80a58">Shonen</option>

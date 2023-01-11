@@ -2,11 +2,11 @@ import React from 'react'
 
 const Form = ({children, handler}) => {
   return (
-    <form onSubmit={handler} className="formChapter">
+    <form className='formChapter' onSubmit={handler}>
       {
         children
       }
-      <input type="submit" value="Send" className='enviar' />
+      <input className='enviar' type="submit" value="Send" />
     </form>
   )
 }

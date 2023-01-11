@@ -6,7 +6,7 @@ const Footer = () => {
 <div className='footer'>
 
     <div className='suscribite'>
-      <h2>Suscribite Master</h2>
+      <h2>Subscribe</h2>
     <form className='form' action="">
       <input className='inputFooter' type="text" placeholder='Enter your Email' />
       <button>Suscribe now</button>
@@ -17,9 +17,7 @@ const Footer = () => {
     <div className='ancorEiconos'>
         <div className='ancors'>
           <a href="">Home</a>
-          <a href="">About Us</a>
           <a href="">Comics</a>
-          <a href="">Mangas?</a>
         </div>
 
         <div className='iconos'>
@@ -31,10 +29,10 @@ const Footer = () => {
 
     </div >
     <div className='finalFooter'>
-    <p className='P-footer'>© 2022 Minga. Todos los derechos reservados loco.</p>
+    <p className='P-footer'>© 2022 Minga. All Rights Reserved.</p>
       <div className='divImg'><p className='img-footer'><img src="./assets/Logo.png" alt="" /><span className='inga'>inga</span></p></div>
-      <p className='P-footer'>Terminos y Condiciones</p>
-      <p className='P-footer'>Politica de privacidad</p>
+      <p className='P-footer'>Terms and Conditions</p>
+      <p className='P-footer'>Privacy Policy</p>
     </div>
       
 </div>
