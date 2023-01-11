@@ -12,7 +12,7 @@ const comicsReducers = createReducer(
              getComics.fulfilled,
              (state,action) =>{
                 let newState = {
-                    comics: action.payload.response.comics //.data.? debo poner la
+                    comics: action.payload.response //.data.? debo poner la
                                         // misma ruta que esta en la peticion axios
                                         
                 }   
