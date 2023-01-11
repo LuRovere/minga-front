@@ -5,7 +5,7 @@ import { Form } from "../components";
 import postData from "../services/postData";
 
 
-const CreateComic = () => {
+const NewComic = () => {
     const inputTitle = useRef("")
     const inputDescription = useRef("")
     const inputCoverPhoto = useRef("")
@@ -23,7 +23,6 @@ const CreateComic = () => {
             photo: inputCoverPhoto.current.value
         }
         const response = await postData('http://localhost:8080/api/comics/', data)
-        console.log(response)
         if(!response.success) {
             if(typeof response.response === "object"){
                 dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
@@ -84,4 +83,4 @@ const CreateComic = () => {
     </div>
      )
     }
- export default CreateComic
+ export default NewComic

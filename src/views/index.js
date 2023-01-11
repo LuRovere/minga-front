@@ -1,2 +1,2 @@
 export { default as Home } from './Home.view'
-export {default as CreateComic} from './NewComic.view'
+export {default as NewComic} from './NewComic.view'
