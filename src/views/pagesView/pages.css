@@ -1,5 +1,6 @@
 .page-container {
   padding-top: 100px;
+  width: 100%;
   background-color: #ebebeb;
 }
 .page-title {
@@ -16,6 +17,12 @@
   text-align: center;
 }
 .page {
-  width: 100vw;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.page-img {
+  width: 100%;
+  max-width: 685px;
   min-height: 100vw;
 }
