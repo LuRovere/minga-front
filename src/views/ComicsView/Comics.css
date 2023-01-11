@@ -26,17 +26,19 @@
     margin: 80px 0px 40px;
 }
 
-.search{
-    height: 50%;
-    width: 35%;
-    padding: 20px;
-    font-size: 15px;
-    border-radius: 30px;
-    border: 0.0px solid transparent;
+.contSearch{
     display: flex;
-    text-align: center;
+    width: 320px;
+    padding: 15px;
+    justify-content: left;
+    border-radius: 30px;  
+    background-color: white; 
+}
+.search{
+    border: 0.0px solid transparent;
     color: gray;
-    
+    font-size: 19px;
+    width: 100%;
 }
 
 .exploradorDeComics{
@@ -87,18 +89,22 @@
 .card{
     background-color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px -2px 38px -30px rgba(0, 0, 0, 0.1);
+    
 
 }
 
 .textoCard{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: flex-start;
-    margin-right: 12px;
+    text-align: center;
+    height: 100px;
+    border-left: 6px solid #8883F0;
     
 }
 
@@ -107,27 +113,26 @@
     display: flex;
     margin-left: 10px;
 }
+
+
 .cardIMG{
    
-width: 150px;
-height: 150px;
-left: 141px;
-top: -20px;
-border-radius: 80px;
+
+border-top-left-radius: 70px;
+border-bottom-left-radius: 70px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
 
 }
 /*-----------------------------------*/
 @media (min-width:768px){
 
 
-    .search{
-        height: 50px;
-        
+    .contSearch{
+        width: 50%;
+       
     }
-    .exploradorDeComics{
-        width: 680px;
-        padding: 30px;
-    }
+ 
     .button1{
         display: flex;
         justify-content: center;
@@ -162,7 +167,7 @@ border-radius: 80px;
         width: 110px;
     }
     .card{
-        padding: 30px;
+        
         height: 300px;
     }
     .cardIMG{

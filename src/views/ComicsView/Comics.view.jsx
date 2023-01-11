@@ -6,7 +6,11 @@ const ComicsView = () =>{
         <div className="comicsBody">
 
 <h1 className="tituloComics">Comics</h1>
-<input className="search" type="search" value="Find your comic here"/>
+<label className="contSearch" htmlFor="">
+    <img className="searchImg" src="./assets/Search.png" alt="" />
+    <input className="search" type="search" value="Find your comic here"/>
+</label>
+
 <section>
     
     <div className="exploradorDeComics">
@@ -23,7 +27,10 @@ const ComicsView = () =>{
                 <h2 className="tituloCard">Superman Comic</h2>
                 <p className="pCard">Type</p>
             </div>
-            <img className="cardIMG" src="https://tap-multimedia-1172.nyc3.digitaloceanspaces.com/productimage/19325/9789877246568.jpg" alt="" />
+            <div className="divCardImg">
+            <img className="cardIMG" src="./assets/ejemploCard.png" alt="" />
+            </div>
+            
 
          </div>
     </div>
