@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import comicsActions from "./actions";
 
-const {obtenerComics}= comicsActions
+const {getComics}= comicsActions
 
 const initialState = { comics : [] }
 
@@ -9,7 +9,7 @@ const comicsReducers = createReducer(
     initialState,
     ( builder ) => { builder //contruye casos de lgca de reduccion
         .addCase(
-             obtenerComics.fulfilled,
+             getComics.fulfilled,
              (state,action) =>{
                 let newState = {
                     comics: action.payload.response.comics //.data.? debo poner la

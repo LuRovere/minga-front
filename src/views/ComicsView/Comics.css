@@ -50,6 +50,25 @@
 .explore{
     font-size: 25px;
 }
+.ancorsComics{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 25px 0px;
+}
+
+
+.ancorComics{
+    background-color: #8883F0;
+    height: 100px;
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+}
 
 .allButons{
     display: flex;
@@ -132,6 +151,13 @@ border-bottom-right-radius: 10px;
         width: 50%;
        
     }
+
+    .ancorsComics{
+    
+
+    }
+    .ancorComics{ 
+    }
  
     .button1{
         display: flex;
@@ -166,10 +192,7 @@ border-bottom-right-radius: 10px;
         padding: 30px;
         width: 110px;
     }
-    .card{
-        
-        height: 300px;
-    }
+   
     .cardIMG{
         height: 250px;
         width: 250px;

@@ -1,7 +1,23 @@
-import React from "react"
+import React, { useEffect } from "react"
 import Comics from "./Comics.css"
+import { useSelector, useDispatch } from "react-redux"
+import comicsActions from "../../store/comics/actions"
+const {getComics}= comicsActions
+
 
 const ComicsView = () =>{
+    const {comics} = useSelector(store=>store.comics)
+    console.log(comics)
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+
+        if (comics.lenght===0){
+            dispatch(getComics())
+        }
+        
+    },[])
+
     return (
         <div className="comicsBody">
 
@@ -15,6 +31,11 @@ const ComicsView = () =>{
     
     <div className="exploradorDeComics">
     <h2 className="explore">Explore</h2>
+    <div className="ancorsComics">
+        <a className="ancorComics" href="">Adventures</a>
+        <a className="ancorComics" href="">Nostalgic</a>
+        <a className="ancorComics" href="">Popular</a>
+    </div>
         <div className="allButons">
             <button className="button1">Shōnen</button>
             <button className="button2">Seinen</button>
