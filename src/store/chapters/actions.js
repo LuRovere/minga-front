@@ -3,7 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit"
 
 const getChapter = createAsyncThunk(
 "getChapter",
-async (comics) => {
+async (chapter) => {
     try {
         const response= await axios.get(`http://localhost:8080/api/chapters?comic_id="63bd77a14dc6ee27758ac91b"`)
     return {
@@ -21,4 +21,5 @@ async (comics) => {
 const chapterActions = {
     getChapter
 }
+// console.log(chapterActions)
 export default chapterActions

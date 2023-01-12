@@ -1,35 +1,37 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import './Comic.css'
-//, useSelector
-import Chapters from "../../components/Chapter.one";
+// import Chapters from "../../components/Chapter.one";
 import React from "react";
 import comicActions from "../../store/comic/actions";
 import { useParams } from "react-router-dom";
 
-const { getComic } = comicActions;
-
 export default function ComicView() {
-//   const comicStore = useSelector(store => store.comics) 
+  const comicStore = useSelector(store => store)
+  console.log(comicStore)
+  const {getComic} = comicActions
   const dispatch= useDispatch()
 
 const { id } = useParams() 
 
   useEffect(()  => {
     dispatch(getComic(id))
-  })
+    console.log(comicStore)
+  }, []
+  )
 
-  const [chapter, setChapter] = useState(false) 
-  const handleClick = () => {
-    setChapter(!chapter) 
-  }
+  // const [chapter, setChapter] = useState(false) 
+  // const handleClick = () => {
+  //   setChapter(!chapter) onClick={handleClick}
+  // }
 
 
   return (
-      <div className="Comic"> 
-      <img src="https://storage.googleapis.com/minga/mangas/parasyte/main__parasyte.jpg" className="imageComic" alt="" /> 
-      <p className="">Parasyte</p>
-      <button onClick={handleClick}> Chapter </button> { chapter ? (<Chapters />) : null } 
+      <div className="Comic">
+        <div className="comicMargin">
+      <img src={comicStore?.photo} className="imageComic" alt=""/><p className="">Parasyte</p>
+      <button > Chapter que no hace nada </button>
+      </div>
     </div>
   );
 } 
