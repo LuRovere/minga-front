@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
-const PagesSlides = ({ data }) => {
+const PagesSlides = () => {
   const [actualImg, setActualImg] = useState(0)
+  const { response } = useSelector(store => store.chapter)
   const _handlePrev = () => {
     setActualImg(actualImg - 1)
     if(actualImg < 1) {
@@ -9,7 +11,7 @@ const PagesSlides = ({ data }) => {
     }
   }
   const _handleNext = () => {
-    if(actualImg < data?.pages?.length - 1) {
+    if(actualImg < response?.pages?.length - 1) {
       setActualImg(actualImg + 1)
     }
   }
@@ -20,7 +22,7 @@ const PagesSlides = ({ data }) => {
           <button onClick={_handleNext} className='page-button'></button>
         </div>
         {
-          data?.pages?.map((page, index) => {
+          response?.pages?.map((page, index) => {
             return <div key={index}>
               {
                 actualImg === index && (

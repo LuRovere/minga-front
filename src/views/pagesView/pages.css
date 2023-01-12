@@ -41,3 +41,8 @@
   width: 50%;
   height: 100%;
 }
+.message {
+  font-size: 3rem;
+  color: var(--primary);
+  text-align: center;
+}

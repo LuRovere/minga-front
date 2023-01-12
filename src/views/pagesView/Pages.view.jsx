@@ -1,35 +1,34 @@
-import axios from 'axios'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { PageSlides } from '../../components'
-import './pages.css'
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import chapterActions from "../../store/chapter/actions";
+import { useParams } from "react-router-dom";
+import { PageSlides } from "../../components";
+import "./pages.css";
 
 const Pages = () => {
-  const [data, setData] = useState({})
-  const { id } = useParams()
-  const getData = async (url) => {
-    try {
-      const response = await axios.get(url)
-      setData(response?.data?.response)
-      console.log(response.data.response)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+	const { id } = useParams();
+	const { response, success } = useSelector((store) => store.chapter);
+	const dispatch = useDispatch();
+	const { getChapter } = chapterActions;
+	useEffect(() => {
+		dispatch(getChapter(id));
+	}, [id]);
+	return (
+		<div className='page-container'>
+			{!success ? (
+				<h2 className='message'>{response}</h2>
+			) : (
+				<>
+					<div className='page-title'>
+						<h2>
+							{response?.order} - {response?.title}
+						</h2>
+					</div>
+					<PageSlides />
+				</>
+			)}
+		</div>
+	);
+};
 
-  useEffect(() => {
-    getData(`http://localhost:8080/api/chapters/${id}`)
-    document.title = `Minga - ${data?.title}`
-    
-  },[])
-  return (
-    <div className='page-container'>
-      <div className='page-title'>
-        <h2>{data?.order} - {data?.title}</h2>
-      </div>
-      <PageSlides data={data}/>
-    </div>
-  )
-}
-
-export default Pages
+export default Pages;
