@@ -1,0 +1,12 @@
+.Comic{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imageComic{
+    width: 25%;
+    height: 25%;
+}
+.formChapter{
+    margin-top: 100px;
+}

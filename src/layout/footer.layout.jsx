@@ -16,15 +16,15 @@ const Footer = () => {
       
     <div className='ancorEiconos'>
         <div className='ancors'>
-          <a href="">Home</a>
-          <a href="">Comics</a>
+          <a href="#">Home</a>
+          <a href="#">Comics</a>
         </div>
 
         <div className='iconos'>
-          <a href=""><img src="./assets/facebook.png" alt="" /></a>
-          <a href=""><img src="./assets/twitter.png" alt="" /></a>
-          <a href=""><img src="./assets/vimeo.png" alt="" /></a>
-          <a href=""><img src="./assets/youtube.png" alt="" /></a>
+          <a href="#"><img src="./assets/facebook.png" alt="" /></a>
+          <a href="#"><img src="./assets/twitter.png" alt="" /></a>
+          <a href="#"><img src="./assets/vimeo.png" alt="" /></a>
+          <a href="#"><img src="./assets/youtube.png" alt="" /></a>
     </div>
 
     </div >

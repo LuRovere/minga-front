@@ -16,19 +16,19 @@ const Navbar = () => {
     return (
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} src='./assets/images/menu.png'/>
+        <img onClick={menuPequeño} src='./assets/images/menu.png' alt=''/>
         {
             variable ?(
             <div className='opciones'>
-            <a className='comi' href='#'>Comics</a>
-            <a className='comi' href='#'>Log in</a>
+            <a className='comi' href="#">Comics</a>
+            <a className='comi' href="#">Log in</a>
         </div>
             )
             : null
         }
         </div>
         <div className='derecha'>
-        <a href=''><img className='logo' src='./assets/images/Logo.png'/></a>
+        <a href="#"><img className='logo' src='./assets/images/Logo.png' alt=''/></a>
         </div>
     </div>
     )
