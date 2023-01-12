@@ -15,6 +15,7 @@ const chapterReducer = createReducer(initialState, (builder) => {
         response: 'Loading...',
         success: false
       }
+      return newState
     })
 		.addCase(getChapter.fulfilled, (state, action) => {
 			const newState = {
