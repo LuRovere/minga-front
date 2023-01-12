@@ -1,31 +1,24 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { PageSlides } from '../../components'
 import './pages.css'
 
 const Pages = () => {
   const [data, setData] = useState({})
-  const [actualImg, setActualImg] = useState(0)
+  const { id } = useParams()
   const getData = async (url) => {
     try {
       const response = await axios.get(url)
       setData(response?.data?.response)
-      console.log(data)
+      console.log(response.data.response)
     } catch (error) {
       console.log(error)
     }
   }
-  const _handlePrev = () => {
-    if(actualImg > 0) {
-      setActualImg(actualImg - 1)
-    }
-  }
-  const _handleNext = () => {
-    if(actualImg < data?.pages?.length - 1) {
-      setActualImg(actualImg + 1)
-    }
-  }
+
   useEffect(() => {
-    getData('http://localhost:8080/api/chapters/63bd77a24dc6ee27758ac91d')
+    getData(`http://localhost:8080/api/chapters/${id}`)
     document.title = `Minga - ${data?.title}`
     
   },[])
@@ -34,23 +27,7 @@ const Pages = () => {
       <div className='page-title'>
         <h2>{data?.order} - {data?.title}</h2>
       </div>
-      <div className='page'>
-        <div className='buttons-container'>
-          <button onClick={_handlePrev} className='page-button'></button>
-          <button onClick={_handleNext} className='page-button'></button>
-        </div>
-        {
-          data?.pages?.map((page, index) => {
-            return <div key={index}>
-              {
-                actualImg === index && (
-                  <img className='page-img' src={page} alt="pagina" />
-                )
-              }
-            </div>
-          })
-        }
-      </div>
+      <PageSlides data={data}/>
     </div>
   )
 }

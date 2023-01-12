@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element:<NewChapter/>
       },
       {
-        path: '/pages',
+        path: '/pages/:id',
         element: <Pages />
       }
     ]

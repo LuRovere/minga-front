@@ -16,7 +16,7 @@ const Navbar = () => {
     return (
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} src='./assets/images/menu.png'/>
+        <img onClick={menuPequeño} src='/assets/images/menu.png'/>
         {
             variable ?(
             <div className='opciones'>
@@ -28,7 +28,7 @@ const Navbar = () => {
         }
         </div>
         <div className='derecha'>
-        <a href=''><img className='logo' src='./assets/images/Logo.png'/></a>
+        <a href=''><img className='logo' src='/assets/images/Logo.png'/></a>
         </div>
     </div>
     )
