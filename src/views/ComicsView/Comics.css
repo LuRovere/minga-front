@@ -10,7 +10,7 @@
       height: 100%;
       width: 100%;
       background-image: url("/public/assets/imagen\ 15.png");
-      background-size:cover;
+      background-size:contain;
       display: flex;
       flex-direction: column;
       align-items: center;    
@@ -50,22 +50,22 @@ input::placeholder {
     margin: 30px 0px 80px 0px;
     border-radius: 40px;
     background-color: #EBEBEB;
-    padding: 30px;
+    padding: 20px;
+    width: 350px;
 }
 .explore{
     font-size: 25px;
+    
 }
 .ancorsComics{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
     margin: 25px 0px;
 }
 
 
 .ancorComics1,.ancorComics2,.ancorComics3{
-    background-color: #8883F0;
     height: 100px;
     width: 100px;
     display: flex;
@@ -73,21 +73,50 @@ input::placeholder {
     justify-content: center;
     padding: 10px;
     border-radius: 10px;
+    margin: 3px;
+    color: white;
+    
+}
+
+.ancorComics1{
+    background-image: url(/public/assets/hxh.png);
+    background-size: contain;
+}
+.ancorComics2{
+    background-image: url(/public/assets/dragonball.png);
+    background-size: contain;
+}
+.ancorComics3{
+    background-image: url(/public/assets/onepiece.png);
+    background-size: contain;
+    
 }
 
 
 .allButons{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
+    width: 1px;
+    width: 100%;
+    
 }
+
+.button1,.button2,.button3,.button4,.button5,.button6{
+
+    margin-right: 2px;
+}
+
+
 .button1{
     width: 70px;
     color: #EF8481;
-    background-color: #FFE0DF;;
+    background-color: #FFE0DF;
     border-radius: 30px;
     border: 0.0px solid transparent;
+    
 }
 .button2{
     width: 70px;
@@ -113,16 +142,16 @@ input::placeholder {
 }
 .button5{
     width: 70px;
-    color: #8883F0;
-    background-color: #E0DBFF;
+    color: #f083d5;
+    background-color: #ffdbfc;
     border-radius: 30px;
     border: 0.0px solid transparent;
     padding: 10px;
 }
 .button6{
     width: 70px;
-    color: #8883F0;
-    background-color: #E0DBFF;
+    color: #eef083;
+    background-color: #fffedb;
     border-radius: 30px;
     border: 0.0px solid transparent;
     padding: 10px;
@@ -134,9 +163,10 @@ input::placeholder {
     align-items: center;
     border-radius: 10px;
     box-shadow: 0px -2px 38px -30px rgba(0, 0, 0, 0.1);
-    
+    margin-bottom: 12px;
 
 }
+
 
 .textoCard{
     display: flex;
@@ -146,85 +176,88 @@ input::placeholder {
     text-align: center;
     height: 100px;
     border-left: 6px solid #8883F0;
+    margin-right: 15px;
+    
     
 }
 
 .pCard{
     color: #8883F0;
     display: flex;
-    margin-left: 10px;
+    font-size: 9px;
+
 }
 
 
 .cardIMG{
-   
-
 border-top-left-radius: 70px;
 border-bottom-left-radius: 70px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;
+width: 150px;
+height: 150px;
+
 
 }
 /*-----------------------------------*/
 @media (min-width:768px){
 
 
-    .contSearch{
+.contSearch{
         width: 50%;
        
     }
 
-    .ancorsComics{
-    
+ .exploradorDeComics{
+    width: 90%;
+ }
 
+    .ancorComics1,.ancorComics2,.ancorComics3{
+        height: 150px;
+        width: 150px;
+        font-size: 25px;
     }
-    .ancorComics{ 
-    }
- 
-    .button1{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        padding: 30px;
-        width: 110px;
-    }
-    .button2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    padding: 30px;
-    width: 110px;
+
+   .divCardImg{
+    margin-right: 80px;
+   }
+
+    .button1,.button2,.button3,.button4,.button5,.button6{
     
-    }
-    .button3{
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    padding: 30px;
-    width: 110px;
-    }
-    .button4{
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 20px;
-        padding: 30px;
-        width: 110px;
+        font-size: 16px;
+        padding: 20px;
+        width: 80px;
+        margin-left: 5px;
+        
     }
+
+   
    
     .cardIMG{
         height: 250px;
         width: 250px;
+        margin-left: 30px;
+        border-top-left-radius: 120px;
+        border-bottom-left-radius: 120px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
     }
    
+    .textoCard{
+        height: 150px;
+        
+    }
+
     .tituloCard{
-        font-size: 25px;
+        font-size: 20px;
     }
     .pCard{
-        font-size: 23px;
+        font-size: 13px;
+        width: 400px;
+    
     }
 
 }
