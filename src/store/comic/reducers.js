@@ -14,7 +14,7 @@ const comicReducer = createReducer(
             .addCase(getComic.fulfilled,
                 (state, action) => {
                     let newState = {
-                        comics: action.payload.response.comic,
+                        comics: action.payload.response.idComic,
                         message: action.payload.message 
                 }
                 return newState
