@@ -109,6 +109,37 @@ input::placeholder {
     margin-right: 2px;
 }
 
+.button1:hover{
+
+    background-color: #EF8481;
+    color: white;
+}
+.button2:hover{
+
+    background-color: #FC9C57;
+    color: white;
+}
+.button3:hover{
+
+    background-color: #00BA88;
+    color: white;
+}
+.button4:hover{
+
+    background-color: #8883F0;
+    color: white;
+}
+.button5:hover{
+
+    background-color: #f083d5;
+    color: white;
+}
+.button6:hover{
+
+    background-color: #eef083;
+    color: white;
+}
+
 
 .button1{
     width: 70px;
@@ -150,7 +181,7 @@ input::placeholder {
 }
 .button6{
     width: 70px;
-    color: #eef083;
+    color: #fcff42;
     background-color: #fffedb;
     border-radius: 30px;
     border: 0.0px solid transparent;

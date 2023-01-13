@@ -1,27 +1,14 @@
 import axios from "axios";
 import React, {useEffect,useState} from "react";
-
+import { useSelector } from "react-redux";
 
 const ComicsCards=() =>{
-    const [cards,setCards] = useState([])
-
-    const getData = async()=>{
-        try {
-            const response = await axios.get('http://localhost:8080/api/comics')
-            setCards(response.data.response)
-          
-        }catch(err){
-            console.log(err)
-        }
-    }
-    useEffect(()=>{
-        getData()
-    }
-    ,[])
+    const {comics} = useSelector(store=>store.comics)
+ //console.log(comics.comics)
     return (
         <>
             {
-                cards.map((card,index)=>{return<div key={index} className="card">
+                comics.comics?.map((card,index)=>{return<div key={index} className="card">
  
                 <div className="textoCard">
                                <h2 className="tituloCard">{card.title}</h2>

@@ -1,37 +1,42 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import Categories from '../../components/ComicsCategories'
 import Cards from '../../components/ComicsCards'
 import "./Comics.css"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch,useSelector } from "react-redux"
 import comicsActions from "../../store/comics/actions"
 const {getComics}= comicsActions
 
 
 const ComicsView = () =>{
-    const {comics} = useSelector(store=>store.comics)//usar esto
+    const inputCategory = useSelector((store)=> store.filterCategoryComic.filterCategory)
+   //console.log(inputCategory.join(","))
+    
     
     const dispatch = useDispatch()
-    const inputText = ""
-    const inputCategory = ""
-    const inputSort = ""//capturarlas del front use ref use state
-
+    const inputText = useRef("");
+    const inputSort = "asc"
+    console.log(inputText.current?.value)
 
     useEffect(()=>{
-
-        if (comics.length<1){
-            dispatch(getComics({inputText,inputSort,inputCategory}))
+        
+        // if (comics.length<1){
+            dispatch(getComics({
+                inputText:inputText.current.value
+                ,inputSort,
+                inputCategory:inputCategory.join(",")
+            }))
             
- }
+//  }
        
-    },[])
+    },[inputText.current?.value,inputCategory])
 
     return (
         <div className="comicsBody">
-
+ 
 <h1 className="tituloComics">Comics</h1>
-<label className="contSearch" htmlFor="">
+<label className="contSearch" htmlFor="search">
     <img className="searchImg" src="./assets/Search.png" alt="" />
-    <input className="search" type="search" placeholder="Find your comic here"/>
+    <input ref={inputText} className="search" type="text" id="search" placeholder="Find your comic here"/>
 </label>
 
 <section>

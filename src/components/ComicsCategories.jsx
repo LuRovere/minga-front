@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, {useEffect,useState} from "react";
-
+import CategoryButton from "./CategoryButton";
 
 const ComicsCategories=() =>{
     const [categories,setCategories] = useState([])
@@ -19,10 +19,11 @@ const ComicsCategories=() =>{
         
     }
     ,[])
+    
     return (
         <div className="allButons">
            {
-            categories.map((category,index)=>{return <button key={index} className={"button"+(index+1)}>{category.name}</button>})
+            categories.map((category,index)=>{return <CategoryButton index={index} key={index} id={category._id} name={category.name}/>})
             }
          </div>
     )
