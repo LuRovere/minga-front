@@ -11,26 +11,24 @@ const Pages = () => {
 	const dispatch = useDispatch();
   const navigate = useNavigate()
 	const { getChapter } = chapterActions;
-  const chaptersIdList = JSON.parse(localStorage.getItem('id-chapters')) || []
-  const nextChapter = (option) => {
-    const actual = chaptersIdList.findIndex(chapter => chapter === id)
-    switch(option) {
-      case 'prev':
-        if(!actual) {
-          return navigate('/test')
-        }
-        return navigate(`/pages/${chaptersIdList[actual - 1]}`)
-      case 'next':
-        if((actual === chaptersIdList.length - 1)) {
-          return navigate('/test')
-        }
-        return navigate(`/pages/${chaptersIdList[actual + 1]}`)
-      default:
-        throw new Error('Wrong option')
-    }
-  }
+  const chaptersIdList = JSON.parse(localStorage.getItem('id-chapters')) || [] // Esto es de pruebas
+	const [currentChapter, setCurrentChapter] = useState(0) // TODO change: se debe utilizar una forma mas eficiente para obtener el comic actual
+	// TODO change: se debe cambiar el redireccionamiento usando el estado global de Comic Details
+	const prev = () => {
+		if(!currentChapter) {
+			return navigate('/test') // TODO change: En el merge con la rama main se debe cambiar a la pagina de detalles del comic
+		}
+		return navigate(`/pages/${chaptersIdList[currentChapter - 1]}`)
+	}
+	const next = () => {
+		if((currentChapter === chaptersIdList.length - 1)) {
+			return navigate('/test')
+		}
+		return navigate(`/pages/${chaptersIdList[currentChapter + 1]}`)
+	}
 	useEffect(() => {
 		dispatch(getChapter(id));
+		setCurrentChapter(chaptersIdList.findIndex(chapter => chapter === id))
 	}, [id]);
 	return (
 		<div className='page-container'>
@@ -43,7 +41,7 @@ const Pages = () => {
 							{response?.order} - {response?.title}
 						</h2>
 					</div>
-					<PageSlides nextChapter={nextChapter} />
+					<PageSlides next={next} prev={prev} />
 				</>
 			)}
 		</div>

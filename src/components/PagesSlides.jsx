@@ -1,19 +1,19 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
-const PagesSlides = ({nextChapter}) => {
+const PagesSlides = ({prev, next}) => {
   const [actualImg, setActualImg] = useState(0)
   const { response } = useSelector(store => store.chapter)
   const _handlePrev = () => {
     setActualImg(actualImg - 1)
     if(actualImg < 1) {
-      nextChapter('prev')
+      prev()
     }
   }
   const _handleNext = () => {
     setActualImg(actualImg + 1)
     if(actualImg > response?.pages?.length - 2) {
-      nextChapter('next')
+      next()
     }
   }
   return (
