@@ -10,11 +10,10 @@ const { getComics } = comicsActions;
 const ComicsView = () => {
 
   const comicsStore = useSelector((store) => store.comics);
-  //console.log(comicsStore);
+  //c(comicsStore);
   const inputCategory = useSelector(
     (store) => store.filterCategoryComic.filterCategory
   );
-
   const [load,setLoad] = useState(false)
   
   const dispatch = useDispatch();

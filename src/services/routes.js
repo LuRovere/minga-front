@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         element:<NewChapter/>
       },
       {
-        path:'/comics-list',
+        path:'/comics',
         element:<ComicsView/>
       }
     ]
