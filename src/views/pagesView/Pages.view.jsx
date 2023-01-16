@@ -26,9 +26,13 @@ const Pages = () => {
 		}
 		return navigate(`/pages/${chaptersIdList[currentChapter + 1]}`)
 	}
+	const saveId = (comicId) => {
+		localStorage.setItem('comic_id', comicId)
+	}
 	useEffect(() => {
 		dispatch(getChapter(id));
 		setCurrentChapter(chaptersIdList.findIndex(chapter => chapter === id))
+		saveId(id);
 	}, [id]);
 	return (
 		<div className='page-container'>
@@ -41,7 +45,7 @@ const Pages = () => {
 							{response?.order} - {response?.title}
 						</h2>
 					</div>
-					<PageSlides next={next} prev={prev} />
+					<PageSlides next={next} prev={prev} currentChapter={id} />
 				</>
 			)}
 		</div>
