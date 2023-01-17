@@ -1,8 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../layout/layout";
-import { Home, NewAuthor, NewComic, NewChapter, ComicView } from '../views'
+import Reactions from "../components/Reactions";
+import Layout from "../layout/Layout";
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView  } from '../views'
 import Chapters from "../layout/chapters";
 import ChapterCard from "../layout/chapterCard";
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -27,7 +29,23 @@ const router = createBrowserRouter([
       {
         path:'/comic/:id',
         element: <ComicView/>
-      }
+      },
+      {
+        path:'/comics',
+        element:<ComicsView/>
+      },
+      {
+        path: '/pages/:id',
+        element: <Pages />
+      },
+      {
+        path: '/test',
+        element: <TestComics />
+      },
+      {
+        path:'/reactions/:id',
+        element:<Reactions/>
+      },
     ]
   }
 ])
