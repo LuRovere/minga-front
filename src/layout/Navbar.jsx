@@ -38,7 +38,7 @@ const Navbar = () => {
         }
         </div>
         <div className='derecha'>
-        <a href=''><img className='logo' src='./assets/images/Logo.png'/></a>
+        <a href=''><img className='logo' src='../assets/images/Logo.png'/></a>
         </div>
     </div>
     )
