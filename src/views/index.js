@@ -3,3 +3,6 @@ export { default as NewAuthor } from './NewAuthor.view'
 export {default as NewComic} from './NewComic.view'
 export {default as NewChapter} from './NewChapter.view'
 export {default as ComicView} from './ComicView/Comic.view'
+export { default as Pages } from './pagesView/Pages.view'
+export { default as TestComics } from './Test.view'
+export { default as ComicsView } from "./ComicsView/Comics.view";

@@ -1,12 +1,19 @@
 import { configureStore } from "@reduxjs/toolkit";
+import comicsReducers from "./comics/reducers";
+import chapterReducer from "./chapter/reducers";
 import alertReducer from "./minga-alert/reducers";
 import comicReducer from "./comic/reducers";
-import chapterReducer from "./chapters/reducers";
+import chaptersReducer from "./chapters/reducers";
+import filterCategoryReducer from "./comicCategories/reducers"
+
 
 export const store = configureStore({
   reducer: {
-    alert: alertReducer, 
     comic: comicReducer,
-    chapter: chapterReducer
+    alert: alertReducer,
+    comics: comicsReducers,
+    filterCategoryComic: filterCategoryReducer,
+    chapter: chapterReducer,
+    chapters: chaptersReducer,
   }
 })
