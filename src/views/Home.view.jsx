@@ -8,7 +8,7 @@ const Home = () => {
       </span>
       <h1>Your favorite comic shop</h1>
       <p className="lorem">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
-      <a className="button-started" href="#main">Start → </a>
+      <a className="button-started" href="main">Start → </a>
     </div>
   )
 }

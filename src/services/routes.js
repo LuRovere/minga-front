@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/layout";
 import { Home, NewAuthor, NewComic, NewChapter, ComicView } from '../views'
-import Chapters from "../components/Chapter.one"
-
+import Chapters from "../layout/chapters";
+import ChapterCard from "../layout/chapterCard";
 const router = createBrowserRouter([
   {
     path: '/',
