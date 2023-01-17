@@ -21,16 +21,16 @@ const Footer = () => {
         </div>
 
         <div className='iconos'>
-          <a href=""><img src="./assets/facebook.png" alt="" /></a>
-          <a href=""><img src="./assets/twitter.png" alt="" /></a>
-          <a href=""><img src="./assets/vimeo.png" alt="" /></a>
-          <a href=""><img src="./assets/youtube.png" alt="" /></a>
+          <a href=""><img src="../assets/facebook.png" alt="" /></a>
+          <a href=""><img src="../assets/twitter.png" alt="" /></a>
+          <a href=""><img src="../assets/vimeo.png" alt="" /></a>
+          <a href=""><img src="../assets/youtube.png" alt="" /></a>
     </div>
 
     </div >
     <div className='finalFooter'>
     <p className='P-footer'>© 2022 Minga. All Rights Reserved.</p>
-      <div className='divImg'><p className='img-footer'><img src="./assets/Logo.png" alt="" /><span className='inga'>inga</span></p></div>
+      <div className='divImg'><p className='img-footer'><img src="../assets/Logo.png" alt="" /><span className='inga'>inga</span></p></div>
       <p className='P-footer'>Terms and Conditions</p>
       <p className='P-footer'>Privacy Policy</p>
     </div>

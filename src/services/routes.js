@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Reactions from "../components/Reactions";
 import Layout from "../layout/Layout";
 import { Home, NewAuthor, NewComic, NewChapter } from '../views'
 
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
       {
         path:'/new-chapter',
         element:<NewChapter/>
-      }
+      },
+      {
+        path:'/reactions/:id',
+        element:<Reactions/>
+      },
     ]
   }
 ])
