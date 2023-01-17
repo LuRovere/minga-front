@@ -9,7 +9,7 @@ const Footer = () => {
       <h2>Subscribe</h2>
     <form className='form' action="">
       <input className='inputFooter' type="text" placeholder='Enter your Email' />
-      <button>Suscribe now</button>
+      <button className='butonSuscribe'>Suscribe now</button>
     </form>
       
     </div>

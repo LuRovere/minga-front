@@ -34,9 +34,11 @@ export default function Chapters() {
       return <div className="noMore">No more comics</div>;
     } else {
       return (
+        <div className="seeMore">
         <button onClick={seeMore} className="buttonSeeMore">
           See more
         </button>
+        </div>
       );
     }
   };

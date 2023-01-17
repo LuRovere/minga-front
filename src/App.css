@@ -102,14 +102,13 @@ input{
     border: transparent;
 }
 
-button{
+.butonSuscribe{
     background-color: var(--primary);
     padding: 3px;
     margin: 5px;
     border-radius: 5px;
     color: white;
     font-size: 12px;
-   
 }
 .ancors{
     display: flex;
@@ -248,7 +247,7 @@ label {
 
     }
    
-      button{
+      .butonSuscribe{
           background-color: var(--primary);
           padding: 10px;
           height: 40px;

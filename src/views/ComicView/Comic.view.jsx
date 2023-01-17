@@ -36,7 +36,7 @@ export default function Comic() {
             src={comicStore.comics?.response?.photo}
             alt="photo"
           />
-          <p>By {comicStore.comics?.response?.author_id.name}</p>
+          <p className="author">By {comicStore.comics?.response?.author_id.name}</p>
         </div>
         <div className="titlesote">
           <p className="titleComic">{comicStore.comics?.response?.title}</p>

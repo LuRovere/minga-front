@@ -5,10 +5,22 @@
     background-color: #EBEBEB;
     ;
 }
+.allDivs{
+    margin-top: 10px;
+}
+.author{
+    color: #9795A4;
+}
+.companyName{
+    color: #9795A4;
+}
 .photo{
     width: 200px;
     margin-top: 40%;
     border-radius: 20px;
+}
+.chapterCard{
+    margin-top: 20px;
 }
 .comic{
     display: flex;
@@ -26,6 +38,19 @@
     width: 100%;
     margin: 10px;
 }
+.buttonSeeMore{
+    background-color: var(--primary);
+        height: 40px;
+        width: 150px;
+        border-radius: 20px;
+        color: white;
+        text-align:center;
+        margin-top: 10px;
+}
+.seeMore{
+    display: flex;
+    justify-content: center;
+}
 .ButonManga2{
     width: 50%;
     border-radius: 20px;
@@ -37,7 +62,6 @@
 .butons{
     height: 50px;
     display: flex;
-    margin: 1em 0;
     border: 1px solid grey;
     border-radius: 20px;
     background-color: #EBEBEB;
@@ -45,10 +69,12 @@
 .ButonManga{
     width: 50%;
     border-radius: 20px;
+    margin: 0;
 }
 .ButonChapter{
     width: 50%;
     border-radius: 20px;
+    margin: 0;
 }
 .botonSwitch{
     background-color: #EBEBEB;
@@ -57,6 +83,7 @@
     border: none;
     padding: .5em 4em;
     transition: .5s ease-in-out;
+    margin: 0;
 }
 .botonSwitch:hover{
     background-color: #d8d8d8;
@@ -114,18 +141,18 @@
         width: 400px;
     }
     .categoCom{
-        width: 80%;
+        width: 60%;
     }
     .descriptionChapter{
         padding: 7%;
-    }
-    .butons{
-        height: 42px;
     }
     .chapterCard{
         margin-top: 30px;
     }
     .allDivs{
         width: 50%;
+    }
+    .botonSwitch{
+        padding: .5em 4em;
     }
 }
