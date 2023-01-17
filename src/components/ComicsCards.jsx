@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 
 const ComicsCards = () => {
-  const { comics } = useSelector((store) => store.comics);
+  const { comics } = useSelector((store) => store?.comics);
   console.log(comics);
 
   return (
     <>
-      {comics.comics?.map((card, index) => {
+      {comics?.map((card, index) => {
         return (
           <Anchor to={`/comic/${card._id}`} key={index} className="card">
             <div className="textoCard">

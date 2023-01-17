@@ -8,55 +8,77 @@ import comicsActions from "../../store/comics/actions";
 const { getComics } = comicsActions;
 
 const ComicsView = () => {
-
-  const comicsStore = useSelector((store) => store.comics);
-  //c(comicsStore);
+  const comicsStore = useSelector((store) => store.comics.comics);
+  const text = useSelector((store) => store.comics.text);
+  const page = useSelector((store) => store.comics.page);
+  useSelector((store) => store.comics);
   const inputCategory = useSelector(
     (store) => store.filterCategoryComic.filterCategory
   );
-  const [load,setLoad] = useState(false)
-  
+  const [load, setLoad] = useState(false);
   const dispatch = useDispatch();
-  const inputText = useRef("");
+  let inputText = useRef(text);
   const inputSort = "asc";
   const inputLimit = 10;
   //console.log(inputText.current?.value);
-
   useEffect(() => {
     dispatch(
       getComics({
         inputText: inputText.current?.value,
-        inputSort,
+        page,
         inputCategory: inputCategory.join(","),
-        inputLimit,
+        
       })
-    );   
-  }, [load, inputCategory]);
+    );
+  }, [load, inputCategory,page]);
 
-/*-----boton-----*/
+  /*-----boton-----*/
 
-  const seeMore = () => {
-    const limitt = comicsStore.comics?.comics.length;
+  const next = () => {
+    const comicLimit = comicsStore.length
+    console.log(comicLimit)
     dispatch(
       getComics({
         inputText: inputText.current.value,
-        inputSort,
         inputCategory: inputCategory.join(","),
-        inputLimit: limitt + 5,
+        page: page+1,
       })
     );
   };
 
   const boton = () => {
-    const limitt = comicsStore.comics?.comics?.length;
-    if (limitt ===34) {
-      return <div className="noMore">No more comics</div>
+    const comicLimit = comicsStore.length
+    if (comicLimit<9) {
+      return <button className="noMore">No more comics</button>;
     } else {
       return (
-        <button onClick={seeMore} className="buttonSeeMore">
-          See more
+        <button onClick={next} className="buttonNext">
+          Next
         </button>
       );
+    }
+  };
+  /*---------boton2-----*/
+  const prev = () => {
+    const comicLimit = comicsStore.length
+    console.log(comicLimit)
+    dispatch(
+      getComics({
+        inputText: inputText.current.value,
+        inputCategory: inputCategory.join(","),
+        page: page-1,
+      })
+    );
+  };
+
+  const boton2 = () => {
+    if (page>1) {
+      return (
+        <button onClick={prev} className="buttonPrev">
+          Prev
+        </button>
+      );
+
     }
   };
 
@@ -67,11 +89,12 @@ const ComicsView = () => {
         <img className="searchImg" src="./assets/Search.png" alt="" />
         <input
           ref={inputText}
-          onKeyUp={()=>setLoad(!load)}
+          onKeyUp={() => setLoad(!load)}
           className="search"
           type="text"
           id="search"
           placeholder="Find your comic here"
+          defaultValue={text}
         />
       </label>
 
@@ -92,6 +115,7 @@ const ComicsView = () => {
           </div>
           <Categories />
           <Cards />
+          {boton2()}
           {boton()}
         </div>
       </section>

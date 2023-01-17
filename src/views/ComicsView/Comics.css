@@ -219,26 +219,44 @@ input::placeholder {
   height: 150px;
 }
 
-.buttonSeeMore {
+.buttonNext {
   background-color: var(--primary);
   padding: 10px;
   margin: 5px;
-  width: 50%;
+  width: 30%;
   border: transparent;
   border-radius: 20px;
   color: white;
   font-size: 12px;
 }
-.buttonSeeMore:hover {
+.buttonPrev {
+  background-color: var(--primary);
+  padding: 10px;
+  margin: 5px;
+  width: 30%;
+  border: transparent;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+}
+.buttonNext:hover {
+  background-color: #83a0f0;
+  color: rgb(80, 75, 75);
+}
+.buttonPrev:hover {
   background-color: #83a0f0;
   color: rgb(80, 75, 75);
 }
 
 .noMore {
   background-color: rgb(214, 98, 98);
+  padding: 10px;
+  margin: 5px;
+  width: 30%;
+  border: transparent;
+  border-radius: 20px;
   color: white;
-  padding: 12px;
-  border-radius: 15px;
+  font-size: 12px;
 }
 
 .tituloCard{
@@ -252,7 +270,7 @@ input::placeholder {
   }
 
   .exploradorDeComics {
-    width: 100%;
+    width: 700px;
   }
 
   .ancorComics1,
@@ -299,7 +317,8 @@ input::placeholder {
     font-size: 20px;
     
   }
-  .buttonSeeMore {
+  .buttonNext,.buttonPrev,.noMore {
     font-size: 18px;
   }
+
 }
