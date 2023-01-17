@@ -9,22 +9,22 @@ const Footer = () => {
       <h2>Subscribe</h2>
     <form className='form' action="">
       <input className='inputFooter' type="text" placeholder='Enter your Email' />
-      <button>Suscribe now</button>
+      <button className='butonSuscribe'>Suscribe now</button>
     </form>
       
     </div>
       
     <div className='ancorEiconos'>
         <div className='ancors'>
-          <a href="">Home</a>
-          <a href="">Comics</a>
+          <a href="#">Home</a>
+          <a href="#">Comics</a>
         </div>
 
         <div className='iconos'>
-          <a href=""><img src="../assets/facebook.png" alt="" /></a>
-          <a href=""><img src="../assets/twitter.png" alt="" /></a>
-          <a href=""><img src="../assets/vimeo.png" alt="" /></a>
-          <a href=""><img src="../assets/youtube.png" alt="" /></a>
+          <a href="#"><img src="./assets/facebook.png" alt="" /></a>
+          <a href="#"><img src="./assets/twitter.png" alt="" /></a>
+          <a href="#"><img src="./assets/vimeo.png" alt="" /></a>
+          <a href="#"><img src="./assets/youtube.png" alt="" /></a>
     </div>
 
     </div >

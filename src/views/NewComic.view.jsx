@@ -23,7 +23,6 @@ const NewComic = () => {
             photo: inputCoverPhoto.current.value
         }
         const response = await postData('http://localhost:8080/api/comics/', data)
-        console.log(response)
         if(!response.success) {
             if(typeof response.response === "object"){
                 dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
