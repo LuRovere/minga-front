@@ -1,6 +1,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from './footer.layout'
+import Footer from './Footer.layout'
 import Navbar from './Navbar'
 import { useSelector, useDispatch } from "react-redux";
 import alertActions from "../store/minga-alert/actions";
