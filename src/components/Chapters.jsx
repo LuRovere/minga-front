@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Link as Anchor } from "react-router-dom";
-import ChapterCard from "./chapterCard";
+import ChapterCard from "./ChapterCard";
 import React from "react";
 import chapterActions from "../store/chapters/actions";
 import { useParams } from "react-router";
@@ -19,7 +18,7 @@ export default function Chapters() {
     dispatch(getChapters({ id, pages, limit }));
   }, [pages]);
         const seeMore = () => {
-          const limitt = chapterStore.response?.length;
+          const limitt = chapterStore?.response?.length;
           console.log(limitt)
           dispatch(
             getChapters({
@@ -29,7 +28,7 @@ export default function Chapters() {
   };
 
   const boton = () => {
-    const limitt = chapterStore.response?.length;
+    const limitt = chapterStore?.response?.length;
     if (limitt === 34) {
       return <div className="noMore">No more comics</div>;
     } else {
