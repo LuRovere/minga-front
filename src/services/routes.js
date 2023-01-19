@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layou from "../layout/Layou";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn  } from '../views'
+import Layout from "../layout/Layout";
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn } from '../views'
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layou />,
+    element: <Layout />,
     children: [
       {
         path: '/',
