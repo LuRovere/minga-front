@@ -1,11 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { store } from "../../store/store";
 import Reactions from "../../components/Reactions";
 import { useEffect, useState } from "react";
 import "./Comic.css";
 import React from "react";
 import comicActions from "../../store/comic/actions";
-import Chapters from "../../layout/chapters";
+import { Chapters } from "../../components";
 import { useParams } from "react-router-dom";
 const { getComic } = comicActions;
 
@@ -34,13 +33,13 @@ export default function ComicView() {
             src={comicStore.comics?.response?.photo}
             alt="photo"
           />
-          <p className="author">By {comicStore.comics?.response?.author_id.name}</p>
+          <p className="author">By {comicStore.comics?.response?.author_id?.name}</p>
         </div>
         <div className="titlesote">
           <p className="titleComic">{comicStore.comics?.response?.title}</p>
         </div>
         <div className="categoCom">
-          <p  className="categoryName">{comicStore.comics?.response?.category_id.name}</p>
+          <p  className="categoryName">{comicStore.comics?.response?.category_id?.name}</p>
           <p className="companyName">Company name</p>
         </div>
         <div className="Reactions">

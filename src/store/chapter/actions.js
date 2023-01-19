@@ -7,6 +7,7 @@ const getChapter = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const res = await axios.get(`${API_URL}chapters/${id}`)
+      console.log(res.data)
       return {
         success: true,
         response: res.data.response

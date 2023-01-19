@@ -26,6 +26,7 @@
   width: 100%;
   max-width: 685px;
   min-height: 100vw;
+  background-color: transparent;
 }
 .buttons-container {
   position: absolute;
