@@ -1,15 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 import React from "react";
-import comicActions from "../store/comic/actions";
-import { useEffect } from "react";
-import { useParams } from "react-router";
 
-const modalContainer = document.querySelector("#modalContainer");
-
-const { getComic } = comicActions;
-
-const ChapterCard = ({ title, chapterId, isOpened, onClose }) => {
+const ChapterCard = ({ title, chapterId }) => {
     const comicStore = useSelector((store) => store.comic);
 
 return (

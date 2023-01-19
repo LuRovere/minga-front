@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Reactions from "../components/Reactions";
 import Layout from "../layout/layout";
+import Reactions from "../components/reactions/Reactions";
 import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView  } from '../views'
-import Chapters from "../layout/chapters";
-import ChapterCard from "../layout/chapterCard";
+import Chapters from "../components/Chapters";
+import ChapterCard from "../components/ChapterCard";
 import MyReactions from "../components/MyReactions";
 
 const router = createBrowserRouter([
@@ -47,10 +47,6 @@ const router = createBrowserRouter([
       {
         path: '/test',
         element: <TestComics />
-      },
-      {
-        path:'/reactions/:id',
-        element:<Reactions/>
       },
     ]
   }
