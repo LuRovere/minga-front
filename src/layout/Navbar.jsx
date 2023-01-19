@@ -1,19 +1,19 @@
 import React, {useState} from 'react'
 import { Link as Anchor } from 'react-router-dom'
 
+import { useDispatch,useSelector } from 'react-redux'
+import authActions from '../store/auth/actions'
+const { cerrar_sesion } = authActions
+
 const Navbar = () => {
     
     const [variable, setVariable] = useState(false)
-
-    const menuPequeño=()=> {
-        if(variable === true){
-            setVariable(false)
-        }
-        if(variable === false){
-            setVariable(true)
-        }
-    }
+    let { is_online,token } = useSelector(store => store.auth)
+    const [online, setOnline] = useState(is_online)
+    let dispatch = useDispatch()
     
+    const menuPequeño=()=> setVariable(!variable)
+    const signout = async(event) => await dispatch(cerrar_sesion(token))    
     return ( 
     <div className='navBarcito'>
         <div className='izquierda'>
@@ -21,17 +21,19 @@ const Navbar = () => {
         {
             variable ?(
             <div className='opciones'>
-            <Anchor className='comi' to="/">Home</Anchor>
-            <a className='comi' href='#'>Log in</a>
-            <Anchor className='comi' to="/new-author">New author</Anchor>
-            <Anchor className='comi' to="/new-comic">New comic</Anchor>
-            <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
-            <Anchor className='comi' to="/comics">Comics</Anchor>
-
-            {/* <Anchor className='comi' to="/">Log in</Anchor>
-            <Anchor className='comi' to="/">Log in</Anchor> */}
-            
-
+                <Anchor className='comi' to="/">Home</Anchor>
+                <Anchor className='comi' to="/new-author">New author</Anchor>
+                <Anchor className='comi' to="/new-comic">New comic</Anchor>
+                <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
+                <Anchor className='comi' to="/comics">Comics</Anchor>
+            {is_online ? (
+                <p className='comi' href='#' onClick={signout}>Sign Out</p>
+            ) : (
+                <>
+                    <Anchor className='comi' to="/signup">Sign Up</Anchor>
+                    <Anchor className='comi' to="/signin">Sign In</Anchor>
+                </>
+            )}
         </div>
             )
             : null
