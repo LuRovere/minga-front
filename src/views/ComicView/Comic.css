@@ -33,19 +33,6 @@
     width: 100%;
     margin: 10px;
 }
-.buttonSeeMore{
-    background-color: var(--primary);
-        height: 40px;
-        width: 150px;
-        border-radius: 20px;
-        color: white;
-        text-align:center;
-        margin-top: 10px;
-}
-.seeMore{
-    display: flex;
-    justify-content: center;
-}
 .ButonManga2{
     width: 50%;
     border-radius: 20px;
@@ -85,6 +72,19 @@
 }
 .botonSwitch.activeBoton{
     background-color: #4338CA;
+    color: white;
+}
+.nextPrev{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.next, .prev{
+    background-color: var(--primary);
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
     color: white;
 }
 .descriptionChapter{
