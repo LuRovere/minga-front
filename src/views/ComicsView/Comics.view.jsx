@@ -12,9 +12,7 @@ const ComicsView = () => {
   const text = useSelector((store) => store.comics.text);
   const page = useSelector((store) => store.comics.page);
   useSelector((store) => store.comics);
-  const inputCategory = useSelector(
-    (store) => store.filterCategoryComic.filterCategory
-  );
+  const inputCategory = useSelector((store) => store.filterCategoryComic.filterCategory);
   const [load, setLoad] = useState(false);
   const dispatch = useDispatch();
   let inputText = useRef(text);
@@ -98,7 +96,7 @@ const ComicsView = () => {
         />
       </label>
 
-      <section>
+      <section className="sectionCards">
         <div className="exploradorDeComics">
           <h2 className="explore">Explore</h2>
 

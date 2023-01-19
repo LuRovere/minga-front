@@ -7,14 +7,22 @@
     width: 100%;
     
   }
-  
+  .menu{
+    background-color: rgba(255, 255, 255, 0.308);
+  }
+
+  .derecha,.izquierda{
+    background-color: transparent;
+  }
   
   .logo{
       background-color: white;
       height: 40px;
+      
   }
   a{
     text-decoration: none;
+    background-color: transparent;
   }
   .comi{
       margin: 5px;
@@ -51,12 +59,15 @@
       display: flex;
       text-align: center;
       padding: 10px;
+      background-color: transparent;
     }
     .lorem{
       margin: 0px 20px;
+      background-color: transparent;
     }
     h1{
       margin: 20px 0px;
+      background-color: transparent;
     }
   .footer{
       display: flex;

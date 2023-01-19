@@ -17,7 +17,7 @@ const Navbar = () => {
     return ( 
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} src='./assets/images/menu.png' alt='manu'/>
+        <img onClick={menuPequeño} className='menu' src='./assets/images/menu.png' alt='menu'/>
         {
             variable ?(
             <div className='opciones'>
@@ -27,9 +27,7 @@ const Navbar = () => {
             <Anchor className='comi' to="/new-comic">New comic</Anchor>
             <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
             <Anchor className='comi' to="/comics">Comics</Anchor>
-
-            {/* <Anchor className='comi' to="/">Log in</Anchor>
-            <Anchor className='comi' to="/">Log in</Anchor> */}
+            <Anchor className='comi' to="/reactions">Favourites</Anchor>
             
 
         </div>
@@ -38,7 +36,7 @@ const Navbar = () => {
         }
         </div>
         <div className='derecha'>
-        <a href="#"><img className='logo' src='../assets/images/Logo.png' alt=''/></a>
+        <a href="#"><img className='logo' src='../assets/images/Logo.png' alt='nav'/></a>
         </div>
     </div>
     )
