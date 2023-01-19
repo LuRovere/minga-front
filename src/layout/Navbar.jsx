@@ -27,7 +27,7 @@ const Navbar = () => {
             <Anchor className='comi' to="/new-comic">New comic</Anchor>
             <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
             <Anchor className='comi' to="/comics">Comics</Anchor>
-            <Anchor className='comi' to="/reactions">Favourites</Anchor>
+            <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
             
 
         </div>

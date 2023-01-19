@@ -3,18 +3,22 @@ import Categories from "../components/ComicsCategories";
 import CardsReactions from "../components/CardsReactions";
 import "../views/ComicsView/Comics.view";
 
-//import { useDispatch, useSelector } from "react-redux";
-//import comicsActions from "../store/comic/actions";
+import { useDispatch, useSelector } from "react-redux";
+import comicsActions from "../store/comic/actions";
 
-//const { getComics } = comicsActions;
+const { getComics } = comicsActions;
 
 const MyReactions
  = () => {
-//   const comicsStore = useSelector((store) => store.comics.comics);
-//   const text = useSelector((store) => store.comics.text);
-//   const page = useSelector((store) => store.comics.page);
-//   useSelector((store) => store.comics);
-//   const inputCategory = useSelector((store) => store.filterCategoryComic.filterCategory);
+const comicsStore = useSelector((store) => store.comics.comics);
+console.log(comicsStore)
+const text = useSelector((store) => store.comics.text);
+const page = useSelector((store) => store.comics.page);
+useSelector((store) => store.comics);
+const reactions = useSelector((store) => store);
+console.log(reactions)
+
+
 //   const [load, setLoad] = useState(false);
 //   const dispatch = useDispatch();
 //   let inputText = useRef(text);

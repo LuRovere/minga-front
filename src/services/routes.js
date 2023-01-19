@@ -40,7 +40,7 @@ const router = createBrowserRouter([
         element: <Pages />
       },
       {
-        path: '/reactions',
+        path: '/reactions/me',
         element: <MyReactions />
       },
 

@@ -5,7 +5,7 @@ import { Link as Anchor } from "react-router-dom";
 
 const CardsReactions = () => {
   const { comics } = useSelector((store) => store?.comics);
-  console.log(comics);
+  //console.log(comics);
 
   return (
     <>
