@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../store/store";
+import Reactions from "../../components/Reactions";
 import { useEffect, useState } from "react";
 import "./Comic.css";
 import React from "react";
@@ -43,8 +44,7 @@ export default function ComicView() {
           <p className="companyName">Company name</p>
         </div>
         <div className="Reactions">
-          <img src="../../assets/Megusta.png"/>
-          <img src="../../assets/Nomegusta.png"/>
+          <Reactions/>
         </div>
 
         <div className="butons">

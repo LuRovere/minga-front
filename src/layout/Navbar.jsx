@@ -17,7 +17,7 @@ const Navbar = () => {
     return ( 
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} src='./assets/images/menu.png' alt='manu'/>
+        <img onClick={menuPequeño} src='../assets/images/menu.png' alt='manu'/>
         {
             variable ?(
             <div className='opciones'>

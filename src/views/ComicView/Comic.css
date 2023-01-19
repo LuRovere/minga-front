@@ -72,6 +72,19 @@
     background-color: #4338CA;
     color: white;
 }
+.nextPrev{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.next, .prev{
+    background-color: var(--primary);
+    padding: 10px;
+    height: 40px;
+    width: 150px;
+    border-radius: 5px;
+    color: white;
+}
 .descriptionChapter{
     padding: 10px;
 }

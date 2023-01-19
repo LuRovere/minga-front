@@ -9,6 +9,7 @@ const { getChapters } = chapterActions;
 
 export default function Chapters() {
   const chapterStore = useSelector((store) => store.chapters);
+  console.log(chapterStore)
   const [page, setPage] = useState(1);
   const chapterDetail = chapterStore.chapters.response;
   const dispatch = useDispatch();
@@ -25,15 +26,15 @@ export default function Chapters() {
   };
 
   return (
-    <div>
+    <div className="nextPrev">
       {chapterStore.chapters.response?.length === 0 ? (
-        <h2 className=""> Sorry, this manga has no chapters </h2>
+        <button className="prev" onClick={prev}>Prev</button>
       ) : (
         <div>
           {chapterStore.chapters.response?.map((chapter) => (
             <ChapterCard title={chapter.title} chapterId={chapter._id} />
           ))}
-          <div className="">
+          <div className="nextPrev">
             {page === 1 ? null : (
               <button className="prev" onClick={prev}>
                 Prev
