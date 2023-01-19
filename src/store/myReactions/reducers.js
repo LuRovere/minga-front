@@ -1,17 +1,17 @@
 import { createReducer } from "@reduxjs/toolkit";
-import favouritesActions from "./actions";
+import reactionsActions from "./actions";
 
-const { getFavourites } = favouritesActions;
+const { getReactions } = reactionsActions;
 
-const initialState = { favourites: [] };
+const initialState = { reactions: [] };
 
-const favouritesReducers = createReducer(initialState, (builder) => {
-  builder.addCase(getFavourites.fulfilled, (state, action) => {
+const reactionsReducers = createReducer(initialState, (builder) => {
+  builder.addCase(getReactions.fulfilled, (state, action) => {
     let newState = {
-      favourites: action.payload.response.reactions,
+      reactions: action.payload.response.reactions,
     };
     return newState;
   });
 });
 
-export default favouritesReducers
+export default reactionsReducers

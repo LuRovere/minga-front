@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import { Link as Anchor } from 'react-router-dom'
-
 import { useDispatch,useSelector } from 'react-redux'
 import authActions from '../store/auth/actions'
 const { cerrar_sesion } = authActions
@@ -26,6 +25,7 @@ const Navbar = () => {
                 <Anchor className='comi' to="/new-comic">New comic</Anchor>
                 <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
                 <Anchor className='comi' to="/comics">Comics</Anchor>
+                <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
             {is_online ? (
                 <p className='comi' href='#' onClick={signout}>Sign Out</p>
             ) : (

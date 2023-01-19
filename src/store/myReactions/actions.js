@@ -1,15 +1,16 @@
 import { createAsyncThunk } from "@reduxjs/toolkit"; //metoro para realizar acciones asincronas
 import axios from "axios";
 
-const getFavourites = createAsyncThunk(
+const getReactions = createAsyncThunk(
   //dos parametros,nombre de la accion,y la funcion asincrona
-  "getFavourites",
+  "getReactions",
   async () => {
     try {
-      let reactions = await axios.get("http://localhost:8080/api/reactions");
+      let reactions = await axios.get("http://localhost:8080/api/reactions/me");
+      console.log(reactions)
       return {
         success: true,
-        response: { reactions: reactions },
+        response: { reactions: reactions.data.response },
       };
     } catch (error) {
       return {
@@ -19,6 +20,6 @@ const getFavourites = createAsyncThunk(
     }
   }
 );
-const favouritesActions = {getFavourites}
+const reactionsActions = {getReactions}
 
-export default favouritesActions
+export default reactionsActions

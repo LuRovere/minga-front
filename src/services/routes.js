@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import Layout from "../layout/layout";
+import Layout from "../layout/Layout";
 import Reactions from "../components/reactions/Reactions";
 import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn  } from '../views'
 import Chapters from "../components/Chapters";
