@@ -1,10 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-<<<<<<< HEAD:src/components/Chapters.jsx
 import ChapterCard from "./ChapterCard";
-=======
-import ChapterCard from "./chapterCard";
->>>>>>> 816b451ce3cf0503c89c09819186f4e3a7b3a805:src/layout/chapters.jsx
 import React from "react";
 import chapterActions from "../store/chapters/actions";
 import { useParams } from "react-router";
