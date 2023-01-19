@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 import comicActions from "../store/comic/actions";
 import React, { useEffect } from "react";
