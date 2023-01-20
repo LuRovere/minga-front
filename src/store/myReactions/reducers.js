@@ -8,7 +8,7 @@ const initialState = { reactions: [] };
 const reactionsReducers = createReducer(initialState, (builder) => {
   builder.addCase(getReactions.fulfilled, (state, action) => {
     let newState = {
-      reactions: action.payload.response.reactions,
+      reactions: action.payload.response.reactions
     };
     return newState;
   });

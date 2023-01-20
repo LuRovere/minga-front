@@ -4,13 +4,16 @@ import axios from "axios";
 const getReactions = createAsyncThunk(
   //dos parametros,nombre de la accion,y la funcion asincrona
   "getReactions",
-  async () => {
+  async ({name}) => {
     try {
-      let reactions = await axios.get("http://localhost:8080/api/reactions/me");
+      let reactions = await axios.get("http://localhost:8080/api/reactions/me?name=like");
       console.log(reactions)
       return {
         success: true,
-        response: { reactions: reactions.data.response },
+        response: { 
+          reactions: reactions.data.response,
+          name: name
+        },
       };
     } catch (error) {
       return {
