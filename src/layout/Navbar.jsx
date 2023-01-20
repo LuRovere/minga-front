@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { Link as Anchor } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import authActions from '../store/auth/actions'
+
 const { cerrar_sesion } = authActions
 
 const Navbar = () => {
@@ -16,7 +17,7 @@ const Navbar = () => {
     return ( 
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} className='menu' src='./assets/images/menu.png' alt='menu'/>
+        <img onClick={menuPequeño} className='menu' src='../assets/images/menu.png' alt='menu'/>
         {
             variable ?(
             <div className='opciones'>

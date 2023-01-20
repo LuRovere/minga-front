@@ -1,23 +1,32 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
+import reactionsActions from "../store/myReactions/actions";
+import { useEffect } from "react";
+
+
+const  {getReactions}  = reactionsActions;
 
 const CardsReactions = () => {
-  const { comics } = useSelector((store) => store?.comics);
-  //console.log(comics);
+  const {reactions} = useSelector((store) => store.reactions);
+console.log(reactions)
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    let token = localStorage.getItem("token")
+    dispatch(getReactions(token));
+  }, []);
 
   return (
     <>
-      {/* {comics?.map((card, index) => {
-        return ( */}
-      <div className="card">
+    {reactions?.map((card, index) => {
+        return (
+      <div  key={index} className="card">
         <div>
           <div className="textoCard">
-            <h2 className="tituloCard">title</h2>
-            <p className="pCard">name</p>
+            <h2 className="tituloCard">{card.comic_id.title}</h2>
+            <p className="pCard">{card?.comic_id.category_id.name}</p>
             <div className="buttonsFav">
-              <Anchor to="#" key="{index}" className="readAnchor">
+              <Anchor to={`/comic/${card.comic_id._id}`}className="readAnchor">
                 Read
               </Anchor>
               <button className="deleteButton">Delete</button>
@@ -26,11 +35,10 @@ const CardsReactions = () => {
         </div>
 
         <div className="divCardImg">
-          <img className="cardIMG" src="{foto}" alt="" />
+          <img className="cardIMG" src={card.comic_id.photo} alt="" />
         </div>
-      </div>
-
-      {/*); })} */}
+      </div>)
+  })}
     </>
   );
 };

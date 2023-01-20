@@ -2,26 +2,29 @@ import React, { useEffect, useRef, useState } from "react";
 import Categories from "../components/ComicsCategories";
 import CardsReactions from "../components/CardsReactions";
 import "../views/ComicsView/Comics.view";
-
 import { useDispatch, useSelector } from "react-redux";
 import reactionsActions from "../store/myReactions/actions";
+import authActions from "../store/auth/actions";
 
-const {getReactions} = reactionsActions
+const { getReactions } = reactionsActions;
 
 const MyReactions = () => {
+  
+  const reactions = useSelector((store) => store.reactions);
+  const auth = useSelector((store) => store.auth.token);
+  //console.log(auth)
+  //console.log(reactions);
+  const dispatch = useDispatch();
 
-const reactions = useSelector((store) => store.reactions);
-
-//console.log(reactions)
-
-const dispatch = useDispatch()
-
-useEffect(() => {
-  dispatch(getReactions())
-  console.log(reactions)
-},[])
-
-
+  useEffect(() => {
+    // if (reactions.lenght === 0) {
+     
+    // }
+    let token = localStorage.getItem("token")
+    dispatch(getReactions(token));
+    
+    //console.log(reactions);
+  }, []);
 
   return (
     <div className="favouritesBody">
@@ -29,13 +32,13 @@ useEffect(() => {
       <label className="contSearch" htmlFor="search">
         <img className="searchImg" src="./assets/Search.png" alt="" />
         <input
-        //   ref={inputText}
-        //   onKeyUp={() => setLoad(!load)}
+          //   ref={inputText}
+          //   onKeyUp={() => setLoad(!load)}
           className="search"
           type="text"
           id="search"
           placeholder="Find your comic here"
-         // defaultValue={text}
+          // defaultValue={text}
         />
       </label>
 
@@ -52,5 +55,4 @@ useEffect(() => {
     </div>
   );
 };
-export default MyReactions
-;
+export default MyReactions;
