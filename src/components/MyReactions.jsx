@@ -9,22 +9,30 @@ import authActions from "../store/auth/actions";
 const { getReactions } = reactionsActions;
 
 const MyReactions = () => {
-  
+  const auth = useSelector((store) => store.auth.token);//necesario?
   const reactions = useSelector((store) => store.reactions);
-  const auth = useSelector((store) => store.auth.token);
+  //const text = useSelector((store) => store.reactions.text);
+  const inputCategory = useSelector((store) => store.filterCategoryComic.filterCategory);
+  const [load, setLoad] = useState(false);
   //console.log(auth)
   //console.log(reactions);
   const dispatch = useDispatch();
+  //let inputText = useRef(text);
 
   useEffect(() => {
     // if (reactions.lenght === 0) {
      
     // }
     let token = localStorage.getItem("token")
-    dispatch(getReactions(token));
+    dispatch(getReactions({
+      token,
+      //inputText: inputText.current?.value,
+      inputCategory: inputCategory.join(","),
+    
+    }));
     
     //console.log(reactions);
-  }, []);
+  }, [load, inputCategory]);
 
   return (
     <div className="favouritesBody">
@@ -32,13 +40,13 @@ const MyReactions = () => {
       <label className="contSearch" htmlFor="search">
         <img className="searchImg" src="./assets/Search.png" alt="" />
         <input
-          //   ref={inputText}
-          //   onKeyUp={() => setLoad(!load)}
+           //ref={inputText}
+          onKeyUp={() => setLoad(!load)}
           className="search"
           type="text"
           id="search"
           placeholder="Find your comic here"
-          // defaultValue={text}
+         //defaultValue={text}
         />
       </label>
 
@@ -48,8 +56,6 @@ const MyReactions = () => {
 
           <Categories />
           <CardsReactions />
-          {/* {boton2()}
-          {boton()} */}
         </div>
       </section>
     </div>

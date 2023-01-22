@@ -10,6 +10,7 @@ export default function CategoryButton(props) {
   const [color, setColor] = useState(false);
   const dispatch = useDispatch();
   let category = useSelector((store) => store.comics.category);
+  
   useEffect(() => {
     if (category.length > 0) {
       if (category.includes(id)) {
@@ -20,7 +21,6 @@ export default function CategoryButton(props) {
   const getId = (e) => {
     setClick(!click);
     setColor(!color);
-
     dispatch(filterCategoryComics(id));
   };
 

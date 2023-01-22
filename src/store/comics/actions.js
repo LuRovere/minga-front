@@ -9,7 +9,7 @@ const getComics = createAsyncThunk(
       let comics = await axios.get(
         `http://localhost:8080/api/comics?title=${inputText}&category_id=${inputCategory}&page=${page}`
       );
-      //console.log(inputCategory);
+      console.log(inputCategory);
       return {
         success: true,
         response: {

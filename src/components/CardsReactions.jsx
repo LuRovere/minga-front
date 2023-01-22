@@ -1,20 +1,45 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 import reactionsActions from "../store/myReactions/actions";
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 
 
-const  {getReactions}  = reactionsActions;
+const  {getReactions,deleteLike}  = reactionsActions;
 
 const CardsReactions = () => {
+  const [load, setLoad] = useState(true);
   const {reactions} = useSelector((store) => store.reactions);
-console.log(reactions)
+//console.log(reactions)
 
   const dispatch = useDispatch();
+
   useEffect(() => {
     let token = localStorage.getItem("token")
-    dispatch(getReactions(token));
-  }, []);
+    dispatch(getReactions(
+      {token}
+      ));
+    //console.log("estoy haciendo el effect")
+  }, [load]);
+
+  
+const deleteButton = (e,comic_id)=>{
+  // console.log(e)
+  // console.log(comic_id)
+  let token = localStorage.getItem("token")
+  let data = {
+    comic_id : comic_id
+  }
+  console.log(data)
+  dispatch(deleteLike(
+    {token,
+    data
+  }
+    ));
+   setLoad(!load)
+   dispatch(getReactions(
+    {token}
+    ));
+      }
 
   return (
     <>
@@ -29,7 +54,7 @@ console.log(reactions)
               <Anchor to={`/comic/${card.comic_id._id}`}className="readAnchor">
                 Read
               </Anchor>
-              <button className="deleteButton">Delete</button>
+              <button onClick={(e)=>deleteButton(e,card.comic_id._id)} className="deleteButton">Delete</button>
             </div>
           </div>
         </div>

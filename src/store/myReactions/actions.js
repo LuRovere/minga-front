@@ -4,7 +4,7 @@ import axios from "axios";
 const getReactions = createAsyncThunk(
   //dos parametros,nombre de la accion,y la funcion asincrona
   "getReactions",
-  async (token) => {
+  async ({token}) => {
     let url =`http://localhost:8080/api/reactions/me`
     
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
@@ -15,6 +15,7 @@ const getReactions = createAsyncThunk(
         success: true,
         response: { 
           reactions: reactions.data.response,
+          //category: inputCategory,
           
         },
       };
@@ -26,6 +27,30 @@ const getReactions = createAsyncThunk(
     }
   }
 );
-const reactionsActions = {getReactions}
+
+const deleteLike= createAsyncThunk(
+  "deleteLike",
+async ({token,data}) => {
+  let url =`http://localhost:8080/api/reactions/me`
+  
+  let headers = {headers:{'Authorization':`Bearer ${token}`}}
+  try {
+      let res = await axios.post(url,data,headers)
+      return { 
+          success: true,
+          response: res.data.response
+      }
+      console.log(res)
+  } catch (error) {
+      //console.log(error)
+      return {
+          success: false,
+          response: error.response.data
+      }
+  }
+})
+
+
+const reactionsActions = {getReactions,deleteLike}
 
 export default reactionsActions
