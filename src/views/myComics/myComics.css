@@ -55,40 +55,6 @@ input::placeholder {
   margin-top: 20px;
   margin-left: 20px;
 }
-.ancorsComics {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 25px 0px;
-  padding: 15px;
-}
-
-.ancorComics1,
-.ancorComics2,
-.ancorComics3 {
-  height: 100px;
-  width: 100px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 10px;
-  margin: 3px;
-  color: white;
-}
-
-.ancorComics1 {
-  background-image: url(/public/assets/hxh.png);
-  background-size: contain;
-}
-.ancorComics2 {
-  background-image: url(/public/assets/dragonball.png);
-  background-size: contain;
-}
-.ancorComics3 {
-  background-image: url(/public/assets/onepiece.png);
-  background-size: contain;
-}
 
 .allButons {
   display: flex;
