@@ -17,6 +17,7 @@ form{
     width: 50%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     border-radius: 0%;
     background-color: white;
@@ -26,6 +27,9 @@ form{
     -moz-border-radius: 0%;
     -ms-border-radius: 0%;
     -o-border-radius: 0%;
+}
+.divAlready{
+    margin-top: 20px;
 }
 .div2{
     width: 50%;
@@ -52,6 +56,7 @@ fieldset{
     flex-direction: column;
     gap: 1rem;
 }
+
 .bkg{
     background-position: center;
     background-size: cover;

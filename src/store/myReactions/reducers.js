@@ -10,8 +10,8 @@ const reactionsReducers = createReducer(initialState, (builder) => {
     let newState = {
       reactions: action.payload.response.reactions,
       text: action.payload.response.text,
-        category: action.payload.response.category,
-        page: action.payload.response.page
+      category: action.payload.response.category,
+        
     };
     return newState;
   });

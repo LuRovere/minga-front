@@ -9,7 +9,7 @@ const { getComics } = comicsActions;
 
 const ComicsView = () => {
   const comicsStore = useSelector((store) => store.comics.comics);
-  console.log(comicsStore)
+  //console.log(comicsStore)
   const text = useSelector((store) => store.comics.text);
   const page = useSelector((store) => store.comics.page);
   useSelector((store) => store.comics);
@@ -21,7 +21,7 @@ const ComicsView = () => {
   const inputLimit = 10;
   //console.log(inputText.current?.value);
   useEffect(() => {
-    console.log(inputCategory)
+    //console.log(inputCategory)
     dispatch(
       getComics({
         inputText: inputText.current?.value,

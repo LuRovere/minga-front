@@ -22,7 +22,7 @@ const CardsReactions = () => {
   }, [load]);
 
   
-const deleteButton = (e,comic_id)=>{
+const deleteButton = async (e,comic_id)=>{
   // console.log(e)
   // console.log(comic_id)
   let token = localStorage.getItem("token")
@@ -30,15 +30,15 @@ const deleteButton = (e,comic_id)=>{
     comic_id : comic_id
   }
   console.log(data)
-  dispatch(deleteLike(
+  await dispatch(deleteLike(
     {token,
     data
   }
     ));
    setLoad(!load)
-   dispatch(getReactions(
-    {token}
-    ));
+  //  dispatch(getReactions(
+  //   {token}
+  //   ));
       }
 
   return (

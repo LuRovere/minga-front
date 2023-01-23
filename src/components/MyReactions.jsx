@@ -13,7 +13,7 @@ const MyReactions = () => {
   const reactions = useSelector((store) => store.reactions);
   const text = useSelector((store) => store.reactions.text);
   const inputCategory = useSelector((store) => store.filterCategoryComic.filterCategory);
-  console.log(inputCategory)
+  //console.log(inputCategory)
   const [load, setLoad] = useState(false);
   //console.log(auth)
   //console.log(reactions);
@@ -24,7 +24,7 @@ const MyReactions = () => {
     let token = localStorage.getItem("token")
     dispatch(getReactions({
       token,
-      inputText: inputText.current?.value,
+      inputText: inputText?.current?.value,
       inputCategory: inputCategory.join(","),
     
     }));
