@@ -4,8 +4,8 @@ import axios from "axios";
 const getReactions = createAsyncThunk(
   //dos parametros,nombre de la accion,y la funcion asincrona
   "getReactions",
-  async ({token}) => {
-    let url =`http://localhost:8080/api/reactions/me`
+  async ({token,inputText, inputCategory}) => {
+    let url =`http://localhost:8080/api/reactions/me?category_id=${inputCategory}&title=${inputText}`
     
     let headers = {headers:{'Authorization':`Bearer ${token}`}}
     try {
@@ -15,8 +15,8 @@ const getReactions = createAsyncThunk(
         success: true,
         response: { 
           reactions: reactions.data.response,
-          //category: inputCategory,
-          
+          text: inputText,
+          category: inputCategory
         },
       };
     } catch (error) {

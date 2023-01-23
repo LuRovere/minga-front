@@ -9,7 +9,9 @@ const reactionsReducers = createReducer(initialState, (builder) => {
   builder.addCase(getReactions.fulfilled, (state, action) => {
     let newState = {
       reactions: action.payload.response.reactions,
-      //category: action.payload.response.category,
+      text: action.payload.response.text,
+        category: action.payload.response.category,
+        page: action.payload.response.page
     };
     return newState;
   });

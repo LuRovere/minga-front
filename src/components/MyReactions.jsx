@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import Categories from "../components/ComicsCategories";
+import ReactionsCategories from "./ReactionsCategories";
 import CardsReactions from "../components/CardsReactions";
 import "../views/ComicsView/Comics.view";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,22 +11,20 @@ const { getReactions } = reactionsActions;
 const MyReactions = () => {
   const auth = useSelector((store) => store.auth.token);//necesario?
   const reactions = useSelector((store) => store.reactions);
-  //const text = useSelector((store) => store.reactions.text);
+  const text = useSelector((store) => store.reactions.text);
   const inputCategory = useSelector((store) => store.filterCategoryComic.filterCategory);
+  console.log(inputCategory)
   const [load, setLoad] = useState(false);
   //console.log(auth)
   //console.log(reactions);
   const dispatch = useDispatch();
-  //let inputText = useRef(text);
+  let inputText = useRef(text);
 
   useEffect(() => {
-    // if (reactions.lenght === 0) {
-     
-    // }
     let token = localStorage.getItem("token")
     dispatch(getReactions({
       token,
-      //inputText: inputText.current?.value,
+      inputText: inputText.current?.value,
       inputCategory: inputCategory.join(","),
     
     }));
@@ -40,13 +38,13 @@ const MyReactions = () => {
       <label className="contSearch" htmlFor="search">
         <img className="searchImg" src="./assets/Search.png" alt="" />
         <input
-           //ref={inputText}
+           ref={inputText}
           onKeyUp={() => setLoad(!load)}
           className="search"
           type="text"
           id="search"
           placeholder="Find your comic here"
-         //defaultValue={text}
+         defaultValue={text}
         />
       </label>
 
@@ -54,7 +52,7 @@ const MyReactions = () => {
         <div className="exploradorDeComics">
           <h2 className="explore">Explore</h2>
 
-          <Categories />
+          <ReactionsCategories />
           <CardsReactions />
         </div>
       </section>
