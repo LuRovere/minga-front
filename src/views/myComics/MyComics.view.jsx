@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './myComics.css'
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import comicsActions from '../../store/comics/actions';
 import Categories from "../../components/ComicsCategories";
 import ComicsCards from '../../components/ComicsCards';
@@ -14,6 +15,7 @@ const MyComics = () => {
   const [response, setResponse] = useState(null)
   const token = localStorage.getItem('token')
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   useEffect(() => {
     if(response) {
       dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }))
@@ -26,8 +28,8 @@ const MyComics = () => {
   const _handleDelete = async (id) => {
     setResponse(await deleteData(`comics/${id}`, token))
   }
-  const _handleUpdate = async (id) => {
-    console.log('editar')
+  const _handleUpdate = (id) => {
+    navigate(`/edit-comic/${id}`)
   }
   return (
     <div className="comicsBody">
