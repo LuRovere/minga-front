@@ -4,8 +4,9 @@ import chapterReducer from "./chapter/reducers";
 import alertReducer from "./minga-alert/reducers";
 import comicReducer from "./comic/reducers";
 import chaptersReducer from "./chapters/reducers";
-import filterCategoryReducer from "./comicCategories/reducers"
+import filterCategoryReducer from "./comicCategories/reducers";
 import authReducer from './auth/reducers';
+import updateActions from "./authorscompany/actions";
 
 
 export const store = configureStore({
@@ -16,6 +17,7 @@ export const store = configureStore({
     filterCategoryComic: filterCategoryReducer,
     chapter: chapterReducer,
     chapters: chaptersReducer,
-    auth: authReducer
+    auth: authReducer,
+    authorsncompany: updateActions
   }
 })
