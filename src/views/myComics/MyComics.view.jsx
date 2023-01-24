@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './myComics.css'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import comicsActions from '../../store/comics/actions';
 import Categories from "../../components/ComicsCategories";
@@ -13,7 +13,7 @@ const { getMyComics } = comicsActions
 
 const MyComics = () => {
   const [response, setResponse] = useState(null)
-  const token = localStorage.getItem('token')
+  const { token } = useSelector(store => store.auth)
   const dispatch = useDispatch()
   const navigate = useNavigate()
   useEffect(() => {
@@ -21,10 +21,12 @@ const MyComics = () => {
       dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }))
       setResponse(null)
     }
-    dispatch(getMyComics({
-      token
-    }))
-  }, [response])
+    if(token) {
+      dispatch(getMyComics({
+        token
+      }))
+    }
+  }, [response, token])
   const _handleDelete = async (id) => {
     setResponse(await deleteData(`comics/${id}`, token))
   }
