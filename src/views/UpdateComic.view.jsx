@@ -1,86 +1,119 @@
-import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import alertActions from "../store/minga-alert/actions";
 import { Form } from "../components";
-import postData from "../services/postData";
+import { useParams } from "react-router-dom";
+import comicActions from "../store/comic/actions";
+import updateData from "../services/updateData";
 
+const token = localStorage.getItem('token')
+const { mingaAlert } = alertActions;
+const { getComic } = comicActions
 
 const UpdateComic = () => {
-    const inputTitle = useRef("")
-    const inputDescription = useRef("")
-    const inputCoverPhoto = useRef("")
-    const inputCategory = useRef("")
-    const { mingaAlert } = alertActions;
+  const comic = useSelector(store => store.comic.comics.response)
+	const [title, setTitle] = useState(comic?.title);
+	const [description, setDescription] = useState(comic?.description);
+	const [photo, setPhoto] = useState(comic?.photo);
+	const [category, setCategory] = useState(comic?.category_id?._id);
+	const [categories, setCategories] = useState([]);
+  const [response, setResponse] = useState(null)
+  const { id } = useParams()
 	const dispatch = useDispatch();
-    const _handleSubmit = async(e) => {
-        e.preventDefault()
-        let data = {
-            author_id: "63b5ab3ef67ecbbe4fe5d0e9",
-            company_id: "63ac47d8b4db2f7baacad498",
-            title: inputTitle.current.value,
-            description: inputDescription.current.value,
-            category: inputCategory.current.value,
-            photo: inputCoverPhoto.current.value
-        }
-        const response = await postData('http://localhost:8080/api/comics/', data)
-        if(!response.success) {
-            if(typeof response.response === "object"){
-                dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
-                return false
-            }
-            dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }))
-                return false
+	const getData = async () => {
+		try {
+			const response = await axios.get("http://localhost:8080/api/categories");
+			setCategories(response.data.response);
+		} catch (err) {
+			console.log(err);
 		}
-		dispatch(mingaAlert({ message: response.response, visible: true, status: response.success }));
+	};
+  const alert = () => {
+    if (!response.success) {
+			return dispatch(
+				mingaAlert({
+					message: response.response,
+					visible: true,
+					status: response.success,
+				})
+			);
+		}
+		dispatch(
+			mingaAlert({
+				message: response.response,
+				visible: true,
+				status: response.success,
+			})
+		);
+  }
+  useEffect(() => {
+    if(response) {
+      alert()
+      setResponse(null)
     }
+    getData()
+    dispatch(getComic(id))
 
-    return(
-
-        <div className="chapter">
-
-         <Form handler={_handleSubmit}>
-            <div className="editarcomic">
-         
-             <label htmlFor="titulo">
-                    
-             <input className="inputChapter"
-              type="text" 
-              id="titulo"
-              placeholder="Insert title" 
-              ref={inputTitle}
-              />
-             </label>
-            <label className="labelComic">
-            <select name="select" className="seleccion" defaultValue={""} ref = {inputCategory} >
-                <option value="">Insert category</option>
-                <option value="63b43895ad64747abfa80a58">Shonen</option>
-                <option value="63b43895ad64747abfa80a59">Manhwa</option>
-                <option value="63b43895ad64747abfa80a5a">Marvel</option>
-                <option value="63b43895ad64747abfa80a5b">DC</option>
-                <option value="63b43895ad64747abfa80a5c">Shojo</option>
-                <option value="63b43895ad64747abfa80a5d">Seinen</option>
-            </select>
-            </label>
-             <label htmlFor="Descripcion">
-             <input className="inputChapter"
-              type="text" 
-              id="descripcion"
-              placeholder="Insert description"
-              ref={inputDescription}
-             
-              />
-             </label>
-             <label htmlFor="Foto de Portada">
-             <input className="inputChapter"
-              type="text" 
-              id="fotoPortada"
-              placeholder="Insert cover photo"
-              ref={inputCoverPhoto}
-              />
-              </label>
-             </div>
-         </Form>
-    </div>
-     )
-    }
- export default UpdateComic
+  },[response])
+	const _handleSubmit = async (e) => {
+		e.preventDefault();
+		let data = {
+			title,
+			description,
+			category_id: category,
+			photo
+		};
+		setResponse(await updateData(`comics/${id}`, data, token))
+	};
+	return (
+		<div className='chapter'>
+			<Form handler={_handleSubmit}>
+				<h1 className='chapterTitulo'>Edit comic</h1>
+				<label htmlFor='titulo'>
+					<input
+						className='inputChapter'
+						type='text'
+						id='titulo'
+						placeholder='Insert title'
+						value={title}
+            onChange={(e)=> setTitle(e.target.value)}
+					/>
+				</label>
+				<label className='labelComic'>
+					<select
+						name='select'
+						className='seleccion'
+						value={category}
+            onChange={(e) => setCategory(e.target.value)}>
+						<option value=''>Insert category</option>
+						{
+              categories?.map((category, index) => <option key={index} value={category._id}>{category.name}</option>)
+            }
+					</select>
+				</label>
+				<label htmlFor='Descripcion'>
+					<input
+						className='inputChapter'
+						type='text'
+						id='descripcion'
+						placeholder='Insert description'
+						value={description}
+            onChange={(e) => setDescription(e.target.value)}
+					/>
+				</label>
+				<label htmlFor='Foto de Portada'>
+					<input
+						className='inputChapter'
+						type='text'
+						id='fotoPortada'
+						placeholder='Insert cover photo'
+						value={photo}
+            onChange={(e) => setPhoto(e.target.value)}
+					/>
+				</label>
+			</Form>
+		</div>
+	);
+};
+export default UpdateComic;
