@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import './profile.css'
 export default function Profile() {
   const info = useSelector((store) => store.auth)
-  console.log(info)
   const {is_author, is_company} = info
   let data = []
   let name = ""

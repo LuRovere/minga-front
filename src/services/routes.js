@@ -40,6 +40,10 @@ const router = createBrowserRouter([
       },{
         path:"/profile/me",
         element:<Profile/>
+      },
+      {
+        path: "/companies/me",
+        element: <Profile/>
       }
     ]
   }

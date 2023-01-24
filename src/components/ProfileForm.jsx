@@ -11,8 +11,8 @@ const {mingaAlert} = alertActions
 
 export default function Form(props) {
     let {data, name} = props
-    let updateStore = useSelector((store) => store.data)
-    let { token } = useSelector(store => store.auth)
+    let storeProfile = useSelector(store => store.auth)
+    let {token} = storeProfile
     const dispatch = useDispatch()
     const dataForm = useRef()
     const [active, setActive] = useState(true)
@@ -22,17 +22,22 @@ export default function Form(props) {
         Array.from(dataForm.current).forEach((element) => element.name && element.value && (form[element.name] = element.value))
         let response = await dispatch(update({data:form, token, name}))
         console.log(response);
-        if(response.payload.response.data?.message){
-            dispatch(mingaAlert(response.payload.response.data.message))
+        if(response.payload.success === true){
+            dispatch(mingaAlert({ message: response.payload.response.data.message, visible: true, status: true }))
         }
-        if(!response.payload.success){
-            dispatch(mingaAlert(response.payload.response))
+        if(response.payload.success === false){
+            dispatch(mingaAlert({ message: response.payload.response[0].message, visible: true, status: response.success }))
         }
 
       }
       const disableAccount = () => {
 		setActive(!active)
-      }
+        if(active === true){
+        dispatch(mingaAlert({message: "You account is desactive", visible: true, status: active}))
+    }   else if(active === false){
+        dispatch(mingaAlert({message: "You account is correctly actived", visible: true, status: true}))
+    }
+    }
       useEffect(() => {
         dispatch(disable({token, name, active:active}))
       }, [active])
