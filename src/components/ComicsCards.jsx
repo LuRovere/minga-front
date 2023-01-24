@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 
 const ComicsCards = () => {
-  const { comics } = useSelector((store) => store?.comics);
+  const { comics } = useSelector((store) => store.comics);
   console.log(comics);
 
   return (
