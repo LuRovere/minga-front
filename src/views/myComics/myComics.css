@@ -77,7 +77,7 @@ input::placeholder {
 
 
 
-.button1 {
+.button1, .edit-comic {
   width: 70px;
   color: #ef8481;
   background-color: #ffe0df;
@@ -113,7 +113,7 @@ input::placeholder {
   background-color:#00ba88;
   color: #d1fbf0;
 }
-.button4 {
+.button4, .delete-comic {
   width: 70px;
   color: #8883f0;
   background-color: #e0dbff;
@@ -287,4 +287,13 @@ input::placeholder {
     font-size: 18px;
   }
 
+}
+.edit-delete {
+  margin: 1rem 0;
+}
+
+.edit-comic, .delete-comic {
+  margin: 0 .5rem;
+  cursor: pointer;
+  padding: .7rem;
 }

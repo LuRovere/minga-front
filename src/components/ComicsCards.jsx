@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 
-const ComicsCards = () => {
+const ComicsCards = ({showButtons}) => {
   const { comics } = useSelector((store) => store.comics);
   console.log(comics);
 
@@ -10,16 +10,24 @@ const ComicsCards = () => {
     <>
       {comics?.map((card, index) => {
         return (
-          <Anchor to={`/comic/${card._id}`} key={index} className="card">
+          <div key={index} className="card">
             <div className="textoCard">
               <h2 className="tituloCard">{card.title}</h2>
               <p className="pCard">{card.category_id.name}</p>
+              {
+                showButtons ? (
+                  <div className="edit-delete">
+                    <button className="edit-comic" value={card._id}>Edit</button>
+                    <button className="delete-comic" value={card._id}>Delete</button>
+                  </div>
+                ) : ''
+              }
             </div>
 
-            <div className="divCardImg">
+            <Anchor to={`/comic/${card._id}`} className="divCardImg">
               <img className="cardIMG" src={card.photo} alt="" />
-            </div>
-          </Anchor>
+            </Anchor>
+          </div>
         );
       })}
     </>

@@ -22,7 +22,7 @@ const MyComics = () => {
       <section>
         <div className="exploradorDeComics">
           <Categories />
-          <ComicsCards />
+          <ComicsCards showButtons={true}/>
         </div>
       </section>
   </div>
