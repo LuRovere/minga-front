@@ -1,9 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import Reactions from "../components/reactions/Reactions";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn  } from '../views'
-import Chapters from "../components/Chapters";
-import ChapterCard from "../components/ChapterCard";
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile } from '../views'
 import MyReactions from "../components/MyReactions";
 
 const router = createBrowserRouter([
@@ -46,6 +43,13 @@ const router = createBrowserRouter([
       },{
         path:"/signup",
         element:<SignUp/>
+      },{
+        path:"/profile/me",
+        element:<Profile/>
+      },
+      {
+        path: "/companies/me",
+        element: <Profile/>
       }
     ]
   }

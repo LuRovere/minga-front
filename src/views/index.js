@@ -8,3 +8,4 @@ export { default as TestComics } from './Test.view'
 export { default as ComicsView } from "./ComicsView/Comics.view"
 export { default as SignIn } from './Login/SignIn'
 export { default as SignUp } from './Login/SignUp'
+export {default as Profile} from './profile/Profile'
