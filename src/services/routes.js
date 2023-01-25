@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile } from '../views'
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile, MyComics, UpdateComic } from '../views'
 import MyReactions from "../components/MyReactions";
 
 const router = createBrowserRouter([
@@ -50,6 +50,12 @@ const router = createBrowserRouter([
       {
         path: "/companies/me",
         element: <Profile/>
+      },{
+        path: "/edit-comics",
+        element: <MyComics />
+      }, {
+        path: "/edit-comic/:id",
+        element: <UpdateComic />
       }
     ]
   }
