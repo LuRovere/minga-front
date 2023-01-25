@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import Reactions from "../../components/Reactions";
+import Reactions from "../../components/reactions/Reactions";
 import { useEffect, useState } from "react";
 import "./Comic.css";
 import React from "react";

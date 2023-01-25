@@ -4,7 +4,7 @@ import { Link as Anchor } from "react-router-dom";
 
 const ComicsCards = () => {
   const { comics } = useSelector((store) => store?.comics);
-  console.log(comics);
+  //console.log(comics);
 
   return (
     <>

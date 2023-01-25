@@ -1,6 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn } from '../views'
+import Reactions from "../components/reactions/Reactions";
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn  } from '../views'
+import Chapters from "../components/Chapters";
+import ChapterCard from "../components/ChapterCard";
+import MyReactions from "../components/MyReactions";
 
 const router = createBrowserRouter([
   {
@@ -28,7 +32,12 @@ const router = createBrowserRouter([
       },{
         path: '/pages/:id',
         element: <Pages />
-      },{
+      },
+      {
+        path: '/reactions/me',
+        element: <MyReactions />
+      },
+      {
         path: '/test',
         element: <TestComics />
       },{
