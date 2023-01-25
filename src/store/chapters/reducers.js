@@ -1,7 +1,7 @@
 import chapterActions from "./actions";
 import { createReducer } from "@reduxjs/toolkit";
 
-const { getChapters } = chapterActions
+const { getChapters, getChapterDetails } = chapterActions
 
 const initialState = {
     chapters: [],
@@ -11,6 +11,14 @@ const chapterReducer = createReducer(
     initialState,
     (builder) =>  {
     builder
+    .addCase(getChapterDetails.fulfilled, (state, action) => {
+        let newState = {
+            chapters: state.chapters,
+            chapter: action.payload.response.chapter,
+            message: action.payload.message
+        }
+        return newState
+    })
     .addCase(getChapters.fulfilled,
         (state, action) => {
             let newState = {
@@ -20,5 +28,6 @@ const chapterReducer = createReducer(
             return newState
         }
         )
+    
 })
 export default chapterReducer
