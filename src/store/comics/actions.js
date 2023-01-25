@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { API_URL } from '../../configs'
 
 const getComics = createAsyncThunk(
   "getComics",
@@ -27,6 +28,30 @@ const getComics = createAsyncThunk(
     }
   }
 );
-const comicsActions = { getComics };
+
+const getMyComics = createAsyncThunk('getMyComics', async ({token}) => {
+  try {
+    const config = {
+      headers: {
+          Authorization : `Bearer ${token}`
+        }
+    }
+    const comics = await axios.get(`${API_URL}comics/me`, config)
+    console.log(comics.data.response)
+    return {
+      success: true,
+      response: comics.data.response
+    }
+  } catch (error) {
+    return {
+      success: false,
+      response: {
+        error: error.message
+      }
+    }
+  }
+})
+
+const comicsActions = { getComics, getMyComics };
 
 export default comicsActions;

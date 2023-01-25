@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import comicsActions from "./actions";
 
-const { getComics } = comicsActions;
+const { getComics, getMyComics } = comicsActions;
 
 const initialState = { comics: [], inputText: "", category: [] ,page:1};
 
@@ -15,7 +15,16 @@ const comicsReducers = createReducer(initialState, (builder) => {
         page: action.payload.response.page
       };
       return newState;
-    });
+    })
+    .addCase(getMyComics.fulfilled, (state, action) => {
+      const newState = {
+        comics: action.payload.response,
+        text: '',
+        category: [],
+        page: 1
+      }
+      return newState
+    })
   //addCase rejected..
 });
 

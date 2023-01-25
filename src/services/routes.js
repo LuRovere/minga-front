@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn } from '../views'
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, MyComics, UpdateComic } from '../views'
 
 const router = createBrowserRouter([
   {
@@ -37,6 +37,12 @@ const router = createBrowserRouter([
       },{
         path:"/signup",
         element:<SignUp/>
+      },{
+        path: "/edit-comics",
+        element: <MyComics />
+      }, {
+        path: "/edit-comic/:id",
+        element: <UpdateComic />
       }
     ]
   }
