@@ -27,6 +27,7 @@ const Navbar = () => {
                 <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
                 <Anchor className='comi' to="/comics">Comics</Anchor>
                 <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
+                <Anchor className='comi' to="/profile/me">Profile</Anchor>
             {is_online ? (
                 <p className='comi' href='#' onClick={signout}>Sign Out</p>
             ) : (

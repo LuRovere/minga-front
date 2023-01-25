@@ -7,6 +7,7 @@ import chaptersReducer from "./chapters/reducers";
 import filterCategoryReducer from "./comicCategories/reducers"
 import reactionsReducers from "./myReactions/reducers";
 import authReducer from "./auth/reducers";
+import updateActions from "./authorscompany/actions";
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     chapter: chapterReducer,
     chapters: chaptersReducer,
     reactions:reactionsReducers,
-    auth: authReducer
+    auth: authReducer,
+    authorsncompany: updateActions
   }
 })

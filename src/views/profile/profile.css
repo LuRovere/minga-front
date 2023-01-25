@@ -1,0 +1,64 @@
+.profileImage{
+    width: 25%;
+    height: 25%;
+    border-radius: 50px;
+}
+.editImageP{
+    display: flex;
+    justify-content: center;
+}
+.contProfile{
+    display: flex;
+    flex-direction: column;
+}
+.formProfile{
+    display: flex;
+    flex-direction: column;
+}
+.marginProfile{
+    margin-top: 20%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.inputProfileDate{
+    width: 50%;
+    margin: 10px;
+}
+.inputProfile{
+    margin: 10px;
+}
+.displayNoAuth{
+    display: flex;
+    justify-content: center;
+}
+.noAuth{
+    margin-top: 15%;
+}
+#inputSend{
+    width: 20%;
+    margin: 10px;
+    background-color: #34D399;
+    border: none;
+    color: #FFFFFF;
+}
+.deleteButton{
+    background-color: #FBDDDC;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #EE8380;
+    border-radius: 1rem;
+    padding: 0.3rem;
+}
+.activeButton{
+    background-color: #FBDDDC;
+    width: 20%;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #EE8380;
+    border-radius: 1rem;
+    padding: 0.3rem;
+}
