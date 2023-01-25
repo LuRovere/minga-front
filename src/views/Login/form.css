@@ -47,7 +47,6 @@ input{
 input[type="submit"]{
     color: #222;
     font-weight: bold;
-    
     border:1px solid #1F1F1F;
 }
 fieldset{

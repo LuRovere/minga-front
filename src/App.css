@@ -163,6 +163,7 @@ input{
 }
 
 
+
 /*------------------------form chapter*/
 
 .chapter{
@@ -170,7 +171,8 @@ input{
     
 }
 
-.chapterTitulo{display: flex;
+.chapterTitulo{
+display: flex;
 justify-content: center;
 font-size: 30px;
 margin-top: 130px;
@@ -178,6 +180,7 @@ margin-top: 130px;
 }
 
 .formChapter{
+    width: 100% !important;   
     display: flex;
 flex-direction: column;
 align-items: center;

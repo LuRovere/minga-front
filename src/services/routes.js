@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
 import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile, MyComics, UpdateComic } from '../views'
 import MyReactions from "../components/MyReactions";
+import EditChapterForm from "../components/EditChapterForm";
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       }, {
         path: "/edit-comic/:id",
         element: <UpdateComic />
+      },
+      {
+        path:"/edit-chapter",
+        element:<EditChapterForm />
       }
     ]
   }

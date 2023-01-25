@@ -1,7 +1,7 @@
 import { createReducer } from "@reduxjs/toolkit";
 import chapterActions from "./actions";
 
-const { getChapter } = chapterActions;
+const { getChapter , deleteChapter} = chapterActions;
 
 const initialState = {
 	response: null,
@@ -10,6 +10,10 @@ const initialState = {
 
 const chapterReducer = createReducer(initialState, (builder) => {
 	builder
+	
+	.addCase(deleteChapter.fulfilled, (state,action ) =>{
+		return {...state}
+	})
     .addCase(getChapter.pending, (state, action) => {
       const newState = {
         response: 'Loading...',
