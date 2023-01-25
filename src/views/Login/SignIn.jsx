@@ -38,7 +38,7 @@ const SignIn = () => {
                     <input type="password" id='pass' placeholder='password' ref={password}/>
                     <input onClick={captureData} type="submit" value="enviar" />
                 </fieldset>
-                <div>
+                <div className="divAlready">
                     <p>Still don't have an account?</p>
                     <Anchor to={"/signup"}>Sign up!</Anchor>
                 </div>

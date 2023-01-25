@@ -1,8 +1,8 @@
 import React, {useState} from 'react'
 import { Link as Anchor } from 'react-router-dom'
-
 import { useDispatch,useSelector } from 'react-redux'
 import authActions from '../store/auth/actions'
+
 const { cerrar_sesion } = authActions
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
     return ( 
     <div className='navBarcito'>
         <div className='izquierda'>
-        <img onClick={menuPequeño} src='/assets/images/menu.png' alt='manute'/>
+        <img onClick={menuPequeño} className='menu' src='../assets/images/menu.png' alt='menu'/>
         {
             variable ?(
             <div className='opciones'>
@@ -26,6 +26,7 @@ const Navbar = () => {
                 <Anchor className='comi' to="/new-comic">New comic</Anchor>
                 <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
                 <Anchor className='comi' to="/comics">Comics</Anchor>
+                <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
                 <Anchor className='comi' to="/profile/me">Profile</Anchor>
             {is_online ? (
                 <p className='comi' href='#' onClick={signout}>Sign Out</p>
@@ -41,7 +42,7 @@ const Navbar = () => {
         }
         </div>
         <div className='derecha'>
-        <a href="#"><img className='logo' src='/assets/images/Logo.png' alt=''/></a>
+        <a href="#"><img className='logo' src='../assets/images/Logo.png' alt='nav'/></a>
         </div>
     </div>
     )

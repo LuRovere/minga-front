@@ -40,7 +40,7 @@ const SignUp = () => {
                     <input type="password" placeholder="Password" ref={password}/>
                     <input onClick={(e)=>captureData(e)} type="submit" value="enviar" />
                 </fieldset>
-                <div>
+                <div className="divAlready">
                     <p>Do you already have an account? then</p>
                     <Anchor to="/signin">Login!</Anchor>
                 </div>

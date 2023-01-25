@@ -3,7 +3,7 @@ import { createAction } from "@reduxjs/toolkit"
 const filterCategoryComics = createAction(
   'filterCategoryComics',
   (data) => {
-    //console.log(data)
+    console.log(data)
     return {
       payload: data
     }
