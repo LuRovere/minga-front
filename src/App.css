@@ -7,25 +7,39 @@
     width: 100%;
     
   }
-  
+  .menu{
+    background-color: rgba(255, 255, 255, 0.308);
+  }
+
+  .derecha,.izquierda{
+    background-color: transparent;
+  }
   
   .logo{
       background-color: white;
       height: 40px;
+      
   }
   a{
     text-decoration: none;
+    background-color: transparent;
+    
+    
+  }
+  a:link { text-decoration: none;
   }
   .comi{
       margin: 5px;
       padding: 10px;
+      color: white;
   
   }
   .opciones{
       border-radius: 10px;
       padding: 10px;
     color: white;
-    background-color: rgba(255, 255, 255, 0.418);
+    background-color:  var(--primary);
+    
     
   }
   
@@ -51,12 +65,15 @@
       display: flex;
       text-align: center;
       padding: 10px;
+      background-color: transparent;
     }
     .lorem{
       margin: 0px 20px;
+      background-color: transparent;
     }
     h1{
       margin: 20px 0px;
+      background-color: transparent;
     }
   .footer{
       display: flex;
@@ -86,7 +103,7 @@
 h2{
     font-size: 15px;
     display: flex;
-    margin: 0px 0px 15px 10px;
+    margin: 0px 20px 15px 10px;
 }
 input{
     width: 150px;
@@ -168,6 +185,7 @@ margin-top: 130px;
 flex-direction: column;
 align-items: center;
 justify-content: center;
+width: 100% !important;
 
 
 }
@@ -221,8 +239,7 @@ label {
           border-radius: 10px;
         display: flex;
         flex-direction: column;
-        color: white;
-        background-color: rgba(255, 255, 255, 0.418);
+        
         
       }
   

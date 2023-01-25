@@ -1,15 +1,16 @@
 import axios from "axios"
-const postData = async (url, data, token) => {
+import { API_URL } from "../configs"
+const deleteData = async (url, token) => {
   const config = {
     headers: {
       Authorization: `Bearer ${token}`
     }
   }
   try {
-    const response = await axios.post(url, data, config)
+    const response = await axios.delete(`${API_URL}${url}`,config)
     return response.data
   }catch (error) {
     return error.response.data
   }
 }
-export default postData
+export default deleteData
