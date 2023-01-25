@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import Reactions from "../../components/reactions/Reactions";
 import { useEffect, useState } from "react";
 import "./Comic.css";
 import React from "react";
@@ -8,7 +9,7 @@ import { useParams } from "react-router-dom";
 const { getComic } = comicActions;
 
 
-export default function Comic() {
+export default function ComicView() {
   const comicStore = useSelector((store) => store.comic);
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -22,7 +23,7 @@ export default function Comic() {
   const showManga = () => {
     setChapter(false);
   };
-  
+
   return (
     <div className="comicEverything">
       <div className="comic">
@@ -42,8 +43,7 @@ export default function Comic() {
           <p className="companyName">Company name</p>
         </div>
         <div className="Reactions">
-          <img src="../../assets/Megusta.png"/>
-          <img src="../../assets/Nomegusta.png"/>
+          <Reactions/>
         </div>
 
         <div className="butons">

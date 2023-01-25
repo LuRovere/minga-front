@@ -1,15 +1,24 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
-import React from "react";
+import comicActions from "../store/comic/actions";
+import React, { useEffect } from "react";
+import { useParams } from "react-router";
+
+const { getComic } = comicActions;
 
 const ChapterCard = ({ title, chapterId }) => {
-    const comicStore = useSelector((store) => store.comic);
+  const comicStore = useSelector((store) => store.comic);
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  useEffect(() => {
+    dispatch(getComic(id));
+  }, []);
 
 return (
     <div className="chapterCard">
         <img
             className="imgChapters"
-            src={comicStore?.comics?.response?.photo}
+            src={comicStore.comics?.response?.photo}
             alt={title}
         />
         <div className="titleChapter">
