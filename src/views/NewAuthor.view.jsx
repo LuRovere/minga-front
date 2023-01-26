@@ -23,7 +23,7 @@ const NewAuthor = () => {
 			date: inputBirthday.current.value,
 			photo: inputImageUrl.current.value
 		}
-		const response = await postData('http://localhost:8080/api/authors/', {...data, user_id: '63b58ab5f67ecbbe4fe5d0d8'})
+		const response = await postData('/authors/', {...data})
 		if(!response.success) {
 			return dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
 		}
