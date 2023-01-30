@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import CarouselItem from '../CarouselItem'
+import './carouselHome.css'
 
 const CarouselHome = () => {
   const [current, setCurrent] = useState(0)
@@ -18,23 +19,19 @@ const CarouselHome = () => {
     return setCurrent(0)
   }
   return (
-    <div>
+    <div className='carousel-container'>
       {
         comics.map((comic, index) => {
           return (
             <div key={comic._id}>
               { current === index && (
-                  <CarouselItem photo={comic.photo} title={comic.title} description={comic.description} />
+                  <CarouselItem photo={comic.photo} title={comic.title} description={comic.description} prev={prev} next={next} />
                 )
               }
             </div>
           )
         })
       }
-      <div>
-        <button onClick={prev}>{"<-"}</button>
-        <button onClick={next}>{"->"}</button>
-      </div>
     </div>
   )
 }
