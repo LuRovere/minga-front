@@ -22,14 +22,12 @@ const Navbar = () => {
             variable ?(
             <div className='opciones'>
                 <Anchor className='comi' to="/">Home</Anchor>
-                <Anchor className='comi' to="/new-author">New author</Anchor>
-                <Anchor className='comi' to="/new-comic">New comic</Anchor>
-                <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
-                <Anchor className='comi' to="/comics">Comics</Anchor>
-                <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
-                <Anchor className='comi' to="/profile/me">Profile</Anchor>
             {is_online ? (
-                <p className='comi' href='#' onClick={signout}>Sign Out</p>
+                <>
+                    <Anchor className='comi' to="/comics">Comics</Anchor>
+                    <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
+                    <p className='comi' href='#' onClick={signout}>Sign Out</p>
+                </>
             ) : (
                 <>
                     <Anchor className='comi' to="/signup">Sign Up</Anchor>
