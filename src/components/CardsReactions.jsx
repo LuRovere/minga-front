@@ -36,9 +36,9 @@ const deleteButton = async (e,comic_id)=>{
   }
     ));
    setLoad(!load)
-  //  dispatch(getReactions(
-  //   {token}
-  //   ));
+    dispatch(getReactions(
+     {token}
+     ));
       }
 
   return (
