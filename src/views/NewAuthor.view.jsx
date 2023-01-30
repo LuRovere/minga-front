@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import alertActions from "../store/minga-alert/actions";
 import { Form } from "../components";
 import postData from "../services/postData";
@@ -10,6 +10,7 @@ const NewAuthor = () => {
 	const inputAddress = useRef();
 	const inputBirthday = useRef();
 	const inputImageUrl = useRef();
+	const { token } = useSelector(store => store.auth)
 	const { mingaAlert } = alertActions;
 	const dispatch = useDispatch();
 	const _handleSubmit = async (e) => {
@@ -23,7 +24,8 @@ const NewAuthor = () => {
 			date: inputBirthday.current.value,
 			photo: inputImageUrl.current.value
 		}
-		const response = await postData('http://localhost:8080/api/authors/', {...data, user_id: '63b58ab5f67ecbbe4fe5d0d8'})
+		console.log(token)
+		const response = await postData('http://localhost:8080/api/authors/', data, token)
 		if(!response.success) {
 			return dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
 		}
