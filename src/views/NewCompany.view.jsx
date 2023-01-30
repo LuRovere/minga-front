@@ -4,27 +4,23 @@ import alertActions from "../store/minga-alert/actions";
 import { Form } from "../components";
 import postData from "../services/postData";
 
-const NewAuthor = () => {
+const NewCompany = () => {
 	const inputName = useRef();
-	const inputLastName = useRef();
-	const inputAddress = useRef();
-	const inputBirthday = useRef();
+	const inputWebsite = useRef();
 	const inputImageUrl = useRef();
+	const inputDescription= useRef();
 	const { token } = useSelector(store =>store.auth)
 	const { mingaAlert } = alertActions;
 	const dispatch = useDispatch();
 	const _handleSubmit = async (e) => {
 		e.preventDefault();
-		const [city, country] = inputAddress.current.value.trim().split(",");
 		const data = {
 			name: inputName.current.value,
-			last_name: inputLastName.current.value,
-			city,
-			country,
-			date: inputBirthday.current.value,
-			photo: inputImageUrl.current.value
+			website: inputWebsite.current.value,
+			logo: inputImageUrl.current.value,
+			description: inputDescription.current.value
 		}
-		const response = await postData('http://localhost:8080/api/authors', data, token)
+		const response = await postData('http://localhost:8080/api/companies', data, token)
 		if(!response.success) {
 			return dispatch(mingaAlert({ message: response.response[0].message, visible: true, status: response.success }))
 		}
@@ -33,7 +29,7 @@ const NewAuthor = () => {
 	return (
 		<div className="chapter">
 			<Form handler={_handleSubmit}>
-				<h1 className="chapterTitulo">New Author</h1>
+				<h1 className="chapterTitulo">New Company</h1>
 				<div></div>
 				<label htmlFor="name">
 					<input
@@ -41,38 +37,18 @@ const NewAuthor = () => {
 						name='name'
 						id="name"
 						className='inputChapter'
-						placeholder='Insert name here...'
+						placeholder='Name'
 						ref={inputName}
 					/>
 				</label>
-				<label htmlFor="last-name">
+				<label htmlFor="website">
 					<input
 						type='text'
-						name='last-name'
-						id='last-name'
+						name='website'
+						id="website"
 						className='inputChapter'
-						placeholder='Insert last name here...'
-						ref={inputLastName}
-					/>
-				</label>
-				<label htmlFor="address">
-					<input
-						type='text'
-						name='address'
-						id='address'
-						className='inputChapter'
-						placeholder='Insert address here... (city, country)'
-						ref={inputAddress}
-					/>
-				</label>
-				<label htmlFor="birth">
-					<input
-						type='date'
-						name='birth'
-						id='birth'
-						className='inputChapter'
-						placeholder='birthday'
-						ref={inputBirthday}
+						placeholder='Website'
+						ref={inputWebsite}
 					/>
 				</label>
 				<label htmlFor="image">
@@ -81,8 +57,18 @@ const NewAuthor = () => {
 						name='image'
 						id='image'
 						className='inputChapter'
-						placeholder='Insert image url here...'
+						placeholder='URL Profile Image'
 						ref={inputImageUrl}
+					/>
+				</label>
+				<label htmlFor="descrption">
+					<input
+						type='text'
+						name='description'
+						id="description"
+						className='inputChapter'
+						placeholder='Description'
+						ref={inputDescription}
 					/>
 				</label>
 			</Form>
@@ -90,4 +76,4 @@ const NewAuthor = () => {
 	);
 };
 
-export default NewAuthor;
+export default NewCompany;

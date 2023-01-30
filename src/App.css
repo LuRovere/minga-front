@@ -137,6 +137,19 @@ input{
     justify-content: space-around;
     margin-bottom: 15px;
 }
+.roleContenedor{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 80vh;
+  background-image: url(http://localhost:3000/static/media/bkg.886489f89f570f7d05cd.png);
+}
+.role{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
 .P-footer{
     font-size: 12px;
     text-align: center;
