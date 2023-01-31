@@ -8,7 +8,7 @@ const { cerrar_sesion } = authActions
 const Navbar = () => {
     
     const [variable, setVariable] = useState(false)
-    let { is_online,token } = useSelector(store => store.auth)
+    let { is_online,token, is_author, is_company } = useSelector(store => store.auth)
     const [online, setOnline] = useState(is_online)
     let dispatch = useDispatch()
     
@@ -23,9 +23,14 @@ const Navbar = () => {
             <div className='opciones'>
                 <Anchor className='comi' to="/">Home</Anchor>
             {is_online ? (
-                <>
-                    <Anchor className='comi' to="/comics">Comics</Anchor>
-                    <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
+                <> {
+                        (!is_author && !is_company) && (
+                            <>
+                                <Anchor className='comi' to="/comics">Comics</Anchor>
+                                <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
+                            </>
+                        )
+                    }
                     <p className='comi' href='#' onClick={signout}>Sign Out</p>
                 </>
             ) : (
