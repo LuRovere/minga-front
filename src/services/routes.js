@@ -5,6 +5,8 @@ import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, C
 import Chapters from "../components/Chapters";
 import ChapterCard from "../components/ChapterCard";
 import MyReactions from "../components/MyReactions";
+import DonationSuccsess from "../components/Donations/DonationSuccsess";
+
 
 const router = createBrowserRouter([
   {
@@ -46,6 +48,9 @@ const router = createBrowserRouter([
       },{
         path:"/signup",
         element:<SignUp/>
+      },{
+        path:"/donation",
+        element:<DonationSuccsess/>
       }
     ]
   }

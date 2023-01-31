@@ -233,6 +233,188 @@ label {
 .labelComic {
     width: 100%;
 }
+
+/*---------modal------------------*/
+.modal{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  left: 0;
+  background: rgba(0, 0, 0,0,0.5);
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#btn-modal:checked ~ .modal{
+  opacity: 1;
+  visibility: visible;
+}
+#btn-modal:checked ~ .modal .contenedor{
+  opacity: 1;
+  visibility: visible;
+}
+.gifDonations{
+  width: 250px;
+}
+
+.contenedor{
+  width: 300px;
+  height: 340px;
+  padding: 25px;
+  margin:auto;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateY(-10%);
+}
+.contenedor header{
+  padding: 10px;
+  font-size: 22px;
+  color:#4f3dCc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.textModal{
+  font-size: 12px;
+  color:#4f3dCc;
+  text-align: center;
+  font-weight: bold;
+}
+.allModalButtons{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 25px;
+}
+.modalButton{
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #4f3dCc;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 22px;
+  font-size: 12px;
+}
+
+.contenedor label {
+ top: 10px;
+ right: 10px;
+ color: #fff;
+ font-size: 15px;
+ cursor: pointer;
+}
+
+#btn-modal{
+  display: none;
+}
+
+.inputP{
+  display: flex;
+  justify-content: center;
+  color: #4f3dCc;
+  font-weight: bold;
+  font-size: 13px;
+  align-items: baseline;
+}
+
+.inputDonation{
+  width: 100px;
+  height: 12px;
+  margin-bottom: 10px;
+  color: #3b2fC1;
+}
+
+.inputDonation[type=number]::-webkit-inner-spin-button, 
+.inputDonation[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.lbl-modal{
+  background:#3b2fC1;
+  color: white;
+  padding: 6px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 14px;
+  align-self: center;
+  margin: 20px 0px;
+  
+}
+.contenedor .buttonClose{
+  display: flex;
+  width: 60px;
+ margin-left: 38%;
+ padding: 5px;
+ background-color: #EE8380;;
+ color: #FBDDDC;
+ border-radius: 20px;
+ border: none;
+ justify-content: center;
+ cursor: pointer;
+
+}
+.donateSubmit{
+  padding:3px;
+  margin-left: 5px;
+  background-color: rgba(52, 211, 153, 1);
+  color: white;
+  font-size: 12px;
+  border-radius: 20px;
+  border: none;
+  height: 20px;
+  width: 60px;
+}
+.success{
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+}
+
+.divThankGif{
+  display: flex;
+  justify-content: center;
+}
+.thankGif{
+  width: 350px;
+  border-radius: 10px;
+}
+
+
+.divtitle{
+  margin-top: 80px;
+}
+.h2donation{
+  align-self: center;
+  margin: 20px;
+  font-size: 25px;
+}
+
+.anchorDiv{
+  align-self: center;
+}
+
+.backHome{
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  background-color:#4f3dCc;
+  height: 30px;
+  color: white;
+  width: 100px;
+  border-radius: 20px;
+}
+
   
   @media (min-width:768px){
   
@@ -258,13 +440,7 @@ label {
       }
 
 
-      .donations{
-        width: 15%;
-        font-size: 15px;
-        align-self: flex-end;
-        margin-right: 20%;
-        
-      }
+      
       .suscribite{
         flex-direction: row;
         justify-content: space-between;
@@ -327,8 +503,152 @@ label {
       .editarcomic{
         margin-top: 10%;
       }
-      
+      /*---------modal------------------*/
+.modal{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top:0;
+  left: 0;
+  background: rgba(0, 0, 0,0,0.5);
+  transition: all 500ms ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#btn-modal:checked ~ .modal{
+  opacity: 1;
+  visibility: visible;
+}
+#btn-modal:checked ~ .modal .contenedor{
+  opacity: 1;
+  visibility: visible;
+}
+.gifDonations{
+  width: 450px;
+}
+
+.contenedor{
+  width: 500px;
+  height: 540px;
+  padding: 25px;
+  margin:auto;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 1px 7px 25px rgba(0,0,0,0.6);
+  transition: all 500ms ease;
+  position: relative;
+  transform: translateY(-10%);
+}
+.contenedor header{
+  padding: 10px;
+  font-size: 35px;
+  color:#4f3dCc;
+  text-align: center;
+  font-weight: bold;
+}
+
+.textModal{
+  font-size: 20px;
+  color:#4f3dCc;
+  text-align: center;
+  font-weight: bold;
+}
+.allModalButtons{
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 120px 10px 120px;
+}
+.modalButton{
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #4f3dCc;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin: 5px ;
+}
+
+.contenedor label {
+
+ top: 10px;
+ right: 10px;
+ color: #fff;
+ font-size: 15px;
+ cursor: pointer;
+}
+
+#btn-modal{
+  display: none;
+}
+
+.inputP{
+  font-size: 20px;
+}
+
+.inputDonation{
+  height: 28px;
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.donateSubmit{
+ width: 90px;
+ height: 28px;
+ font-size: 18px;
+ margin-left: 16px;
+}
+
+.lbl-modal{
+  background:#3b2fC1;
+  color: white;
+  padding: 8px;
+  border-radius: 20px;
+  cursor: pointer;
+  width: 15%;
+  font-size: 15px;
+  align-self: flex-end;
+  margin-right: 20%;
+}
+.contenedor .buttonClose{
+  display: flex;
+  width: 80px;
+ margin-left: 41%;
+ padding: 8px;
+ background-color: #EE8380;;
+ color: #FBDDDC;
+ border-radius: 20px;
+ border: none;
+ justify-content: center;
+ cursor: pointer;
+ font-size: 20px;
+
+}
+
+
+  .thankGif{
+    width: 650px;
+  }
   
+  .divtitle{
+    margin: 80px 0px 50px 0px;
+  }
+  .h2donation{
+    margin: 40px;
+    font-size: 35px;
+  }
+  
+  .backHome{
+    padding: 10px;
+    height: 50px;
+    width: 200px;
+    font-size: 24px;
+  }
   
   }
   /*------------------------form chapter*/
@@ -400,3 +720,4 @@ label {
     margin-right: 30px;
     
 }
+

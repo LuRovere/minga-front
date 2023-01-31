@@ -1,73 +1,102 @@
-import React from 'react'
-import Swal from 'sweetalert2'
+import React from "react";
+import Swal from "sweetalert2";
+import { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import donationActions from '../../store/donations/actions'; 
+import donationActions from "../../store/donations/actions";
 const { donation } = donationActions;
 
-const modal =()=>{
-    Swal.fire({
-        title: 'Donations ♡',
-        showConfirmButton: false,
-        showCancelButton: true,
-        cancelButtonColor: '#d33',
-        denyButtonText: `Close`,
-        imageUrl: 'https://donatepay.ru/uploads/donate/avatars/1659887974_730440.gif',
-        imageWidth: 340,
-        imageHeight: 290,
-        imageAlt: 'Custom image',
-        html: '<div>How much do you want to donate?  </div><a href="https://www.mercadopago.com.ar/checkout/v1/redirect?pref_id=735132460-daf2eaea-c90b-4ebd-a62f-998e82b6d9e0"> $1000 - </a><a href=""> $5000 - </a><a href=""> $10.000 </a>'
-      })}
-
 function Donations() {
-  let { is_online,token } = useSelector(store => store.auth)
-  const donationsStore = useSelector((state) => state.mercadopago)
-  console.log(donationsStore)
-  
+  let { is_online, token } = useSelector((store) => store.auth);
+  const donationsStore = useSelector((state) => state.mercadopago);
+  console.log(donationsStore);
+
   const dispatch = useDispatch();
 
-  let donation1 = 1000
-  let donation2 = 5000
-  let donation3 = 10000
+  let donation1 = 1000;
+  let donation2 = 5000;
+  let donation3 = 10000;
+  let donation4 = useRef();
 
   const getDonations1 = () => {
-    let token = localStorage.getItem("token")
+    let token = localStorage.getItem("token");
     const data = {
-      unit_price: donation1
-    }
-    dispatch(donation({data,token}))
+      unit_price: donation1,
+    };
+    dispatch(donation({ data, token }));
+  };
+  const getDonations2 = () => {
+    let token = localStorage.getItem("token");
+    const data = {
+      unit_price: donation2,
+    };
+    dispatch(donation({ data, token }));
+  };
+  const getDonations3 = () => {
+    let token = localStorage.getItem("token");
+    const data = {
+      unit_price: donation3,
+    };
+    dispatch(donation({ data, token }));
+  };
+  const getDonations4 = () => {
+    let token = localStorage.getItem("token");
+    let price4 = parseInt(donation4.current.value)
     
-    }
-    const getDonations2 = () => {
-      let token = localStorage.getItem("token")
-      const data = {
-        unit_price: donation2
-      }
-      dispatch(donation({data,token}))
-      
-      }
-      const getDonations3 = () => {
-        let token = localStorage.getItem("token")
-        const data = {
-          unit_price: donation3
-        }
-        dispatch(donation({data,token}))
-        
-        }
-
+    const data = {
+      unit_price: price4,
+    };
+    console.log(data)
+    dispatch(donation({ data, token }));
+  };
   return (
-    <> {is_online?(<> <button onClick={modal} className='donations'>Donate ♡ </button>
-   
-    <button onClick={getDonations1}>1000</button>
-    <button onClick={getDonations2}>5000</button>
-    <button onClick={getDonations3}>1000</button>
+    <>
+      {" "}
+      {is_online ? (
+        <>
+          <input type="checkbox" id="btn-modal" />
+          <label htmlFor="btn-modal" className="lbl-modal">
+            Donations ♡
+          </label>
+          <div className="modal">
+            <div className="contenedor">
+              <img
+                className="gifDonations"
+                src="https://donatepay.ru/uploads/donate/avatars/1659887974_730440.gif"
+                alt="gifDonations"
+              />
+              <header>Donations ♡</header>
+
+              <p className="textModal">How much do you want to donate?</p>
+              <div className="allModalButtons">
+                <button className="modalButton" onClick={getDonations1}>
+                  $1000
+                </button>
+                <button className="modalButton" onClick={getDonations2}>
+                  $5000
+                </button>
+                <button className="modalButton" onClick={getDonations3}>
+                  $10.000
+                </button>
+              </div>
+             
+              <p className="inputP">
+                other: <input  className="inputDonation" type="number" ref={donation4} />
+              
+              <button className="donateSubmit" onClick={getDonations4} type="submit">
+              Donate
+              </button>
+              </p>
+              <label className="buttonClose" htmlFor="btn-modal">
+                Close
+              </label>
+            </div>
+          </div>
+        </>
+      ) : (
+        <div></div>
+      )}
     </>
-    ):(<div></div>)
-    }
-   
-    </>
-  )
+  );
 }
 
-export default Donations
-
-
+export default Donations;
