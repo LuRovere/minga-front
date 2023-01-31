@@ -33,6 +33,9 @@ const MyComics = () => {
   const _handleUpdate = (id) => {
     navigate(`/edit-comic/${id}`)
   }
+  const _addChapter = (id) => {
+    navigate(`/new-chapter/${id}`)
+  }
   return (
     <div className="comicsBody">
       <h1 className="tituloComics">My comics</h1>
@@ -40,7 +43,7 @@ const MyComics = () => {
       <section>
         <div className="exploradorDeComics">
           <Categories />
-          <ComicsCards showButtons={true} handleDelete={_handleDelete} handleUpdate={_handleUpdate} />
+          <ComicsCards showButtons={true} handleDelete={_handleDelete} handleUpdate={_handleUpdate} addChapter={_addChapter}/>
         </div>
       </section>
   </div>

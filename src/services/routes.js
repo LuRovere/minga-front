@@ -5,6 +5,7 @@ import MyReactions from "../components/MyReactions";
 import EditChapterForm from "../components/EditChapterForm";
 import NewRole from "../components/NewRole";
 
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -20,7 +21,7 @@ const router = createBrowserRouter([
         path: '/new-comic',
         element: <NewComic/>
       },{
-        path:'/new-chapter',
+        path:'/new-chapter/:id',
         element:<NewChapter/>
       },{
         path:'/comic/:id',
@@ -71,6 +72,7 @@ const router = createBrowserRouter([
       }
     ]
   }
+
 ])
 
 export default router

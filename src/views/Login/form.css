@@ -45,9 +45,8 @@ input{
     border:1px solid #0060df;
 }
 input[type="submit"]{
-    color: #222;
     font-weight: bold;
-    border:1px solid #1F1F1F;
+    border:1px solid white;
 }
 fieldset{
     border: none;

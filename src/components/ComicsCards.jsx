@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link as Anchor } from "react-router-dom";
 
-const ComicsCards = ({ showButtons, handleDelete, handleUpdate }) => {
+const ComicsCards = ({ showButtons, handleDelete, handleUpdate,addChapter }) => {
   const { comics } = useSelector((store) => store.comics);
   console.log(comics);
 
@@ -19,6 +19,7 @@ const ComicsCards = ({ showButtons, handleDelete, handleUpdate }) => {
                   <div className="edit-delete">
                     <button className="edit-comic" onClick={()=>handleUpdate(card._id)}>Edit</button>
                     <button className="delete-comic" onClick={()=>handleDelete(card._id)}>Delete</button>
+                    <button className="add-chcapter" onClick={()=>addChapter(card._id)}>Add Chapter</button>
                   </div>
                 ) : ''
               }
