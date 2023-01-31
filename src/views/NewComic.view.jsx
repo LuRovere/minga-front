@@ -39,8 +39,9 @@ const NewComic = () => {
         <div className="chapter">
 
          <Form handler={_handleSubmit}>
+        
             <div className="editarcomic">
-         
+          <h1 className='chapterTitulo'>New Comic</h1>
              <label htmlFor="titulo">
                     
              <input className="inputChapter"

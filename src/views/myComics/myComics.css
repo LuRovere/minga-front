@@ -121,6 +121,13 @@ input::placeholder {
   border: 0px solid transparent;
   padding: 6px;
 }
+.add-chcapter {
+  color: white;
+  background-color: #000000;
+  border-radius: 30px;
+  border: 0px solid transparent;
+  padding: 10px;
+}
 .active4{
   background-color:#8883f0;
   color: #e0dbff;

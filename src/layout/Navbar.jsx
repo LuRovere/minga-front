@@ -3,14 +3,18 @@ import { Link as Anchor } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux'
 import authActions from '../store/auth/actions'
 
+
 const { cerrar_sesion } = authActions
 
 const Navbar = () => {
     
     const [variable, setVariable] = useState(false)
     let { is_online,token } = useSelector(store => store.auth)
-    const [online, setOnline] = useState(is_online)
     let dispatch = useDispatch()
+    
+    const isAuthorOnline = useSelector(store=>store.auth.is_author)
+    const isCompanyOnline = useSelector(store=>store.auth.is_company)
+
     
     const menuPequeño=()=> setVariable(!variable)
     const signout = async(event) => await dispatch(cerrar_sesion(token))    
@@ -22,12 +26,26 @@ const Navbar = () => {
             variable ?(
             <div className='opciones'>
                 <Anchor className='comi' to="/">Home</Anchor>
-                <Anchor className='comi' to="/new-author">New author</Anchor>
+                {
+        isAuthorOnline ?
+                (<div className='opciones'>
+                {/* <Anchor className='comi' to="/">Home</Anchor> */}
                 <Anchor className='comi' to="/new-comic">New comic</Anchor>
+                <Anchor className='comi' to="/edit-chapter">Edit Chapter</Anchor>
+                <Anchor className='comi' to="/edit-comics">My Comics</Anchor>
+                <Anchor className='comi' to="/new-role">New Role</Anchor>
+                </div>)
+            :(null)}
+{/*                 <Anchor className='comi' to="/new-comic">New comic</Anchor>
+                <Anchor className='comi' to="/edit-chapter">Edit Chapter</Anchor>
+                <Anchor className='comi' to="/edit-comics">My Comics</Anchor>
+                <Anchor className='comi' to="/new-author">New author</Anchor>
                 <Anchor className='comi' to="/new-chapter">New chapter</Anchor>
+                <Anchor className='comi' to="/new-role">New Role</Anchor>
+                <Anchor className='comi' to="/new-company">New Company</Anchor>
                 <Anchor className='comi' to="/comics">Comics</Anchor>
                 <Anchor className='comi' to="/reactions/me">Favourites</Anchor>
-                <Anchor className='comi' to="/profile/me">Profile</Anchor>
+                <Anchor className='comi' to="/profile/me">Profile</Anchor> */}
             {is_online ? (
                 <p className='comi' href='#' onClick={signout}>Sign Out</p>
             ) : (
@@ -47,5 +65,7 @@ const Navbar = () => {
     </div>
     )
 }
+
+
 
 export default Navbar
