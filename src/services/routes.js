@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../layout/Layout";
-import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile, MyComics, UpdateComic } from '../views'
+import { Home, NewAuthor, NewComic, NewChapter, ComicsView, Pages, TestComics, ComicView, SignUp, SignIn, Profile, MyComics, UpdateComic, AdminPanel } from '../views'
 import MyReactions from "../components/MyReactions";
 import EditChapterForm from "../components/EditChapterForm";
 
@@ -61,6 +61,10 @@ const router = createBrowserRouter([
       {
         path:"/edit-chapter",
         element:<EditChapterForm />
+      },
+      {
+        path: "/admin",
+        element: <AdminPanel/>
       }
     ]
   }

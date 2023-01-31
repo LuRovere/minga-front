@@ -7,7 +7,7 @@ const ComicsCategories = () => {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:8080/api/categories");
+      const response = await axios.get("http://localhost:8080/api/me");
       setCategories(response.data.response);
     } catch (err) {
       console.log(err);

@@ -1,0 +1,35 @@
+.todo{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.Title{
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+.card{
+    justify-content: space-around;
+}
+.spaceCard{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.directionCard{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.buttons{
+    margin: 20px;
+    width: 70%;
+    justify-content: center;
+    display: flex;
+}
+.button{
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
