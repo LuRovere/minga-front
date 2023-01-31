@@ -4,16 +4,37 @@
     flex-direction: column;
 }
 .Title{
-    margin-top: 10%;
-    margin-bottom: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    color: white;
+    margin: 150px;
+}
+.background{
+    background-image: url('https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 500px;
+    color: white;
 }
 .card{
     justify-content: space-around;
+    border: 1px solid #EEEEF2;
+    margin: 0;
+    border-radius: 0;
 }
 .spaceCard{
     display: flex;
     flex-direction: column;
     width: 70%;
+    margin: 0;
 }
 .directionCard{
     display: flex;
@@ -21,15 +42,35 @@
     justify-content: space-between;
 }
 .buttons{
-    margin: 20px;
+    margin-top: 50px;
     width: 70%;
     justify-content: center;
     display: flex;
 }
-.button{
-    margin: 10px;
+.buttonAdmin1{
     width: 50%;
     height: 50px;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-radius: 10px;
+    margin-right: 0;
+}
+.buttonAdmin{
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    margin-left: 0;
+    background-color: #4338CA;
+}
+.border{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    align-items: center;
+    padding: 20px;
+}
+.entities{
+    color: #4338CA;
+    border-bottom: 3px solid #4338CA;
+    height: 25px;
+    margin-top: 50px;
 }

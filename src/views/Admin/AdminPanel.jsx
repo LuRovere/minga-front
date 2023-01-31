@@ -7,10 +7,16 @@ const { adminAuthors, getAuthors, getCompanies } = comicActions;
 
 export default function AdminPanel(){
     const adminStoreAuthors = useSelector((store)=> store.adminAuthors?.authors?.response)
-    const adminStoreCompanies = useSelector((store)=> store.adminCompanies)
+    const adminStoreCompanies = useSelector((store)=> store.adminCompanies?.companies.response)
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
-    console.log(adminStoreCompanies)
+    const[authors, setAuthors] = useState(false)
+    const showAuthors = ()=>{
+        setAuthors(true)
+    }
+    const showCompanies = () =>{
+        setAuthors(false)
+    }
     useEffect(()=>{
         dispatch(getAuthors(token))
     }, [])
@@ -21,13 +27,32 @@ export default function AdminPanel(){
     return (
         <div>
             <div className="todo">
-            <div className="Title">
-                <h1>Panel</h1>
-            </div>
+                <div className="background">
+                    <div className="Title">
+                        <h1>Panel</h1>
+                    </div>
+                    <div className="parraf">
+                        <p>This is the administrator panel where you can manage authors and companies</p>
+                    </div>
+                </div>
+            <div className="border">
+                <div className="entities">
+                    <h2>Entities</h2>
+                </div>
             <div className="buttons">
-                <button className="button">Authors</button>
-                <button className="button">Companies</button>
+            <button
+            className={`buttonAdmin${authors ? "": "1"}`}
+            onClick={showAuthors}
+          >
+            Authors
+          </button>
+
+          <button className={`buttonAdmin${authors ? "1" : ""}`} onClick={showCompanies}>
+            {" "}
+            Companies{" "}
+          </button>
             </div>
+            {authors?(
                 <div className="spaceCard">
                     {adminStoreAuthors?.map((card, index)=>{
                         return (
@@ -39,6 +64,19 @@ export default function AdminPanel(){
                             </div>
                         )
                     })}
+                </div>):
+                <div>
+                    {adminStoreCompanies?.map((card, index)=>{
+                        return (
+                            <div key={index} className="card">
+                                <div className="directionCard">
+                                    <h2>{card.name}</h2>
+                                    <button>dissable</button>
+                                </div>
+                            </div>
+                        )
+                    })}
+                </div>}
                 </div>
             </div>
         </div>
