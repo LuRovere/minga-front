@@ -3,14 +3,16 @@ import './Admin.css'
 import { useEffect, useState } from "react";
 import React from "react";
 import comicActions from "../../store/admin/actions";
+import BasicHooksExample from "../../components/buttonSwitch";
 const { adminAuthors, getAuthors, getCompanies } = comicActions;
 
 export default function AdminPanel(){
     const adminStoreAuthors = useSelector((store)=> store.adminAuthors?.authors?.response)
     const adminStoreCompanies = useSelector((store)=> store.adminCompanies?.companies.response)
+    console.log(adminStoreAuthors)
     const dispatch = useDispatch()
     const token = localStorage.getItem("token")
-    const[authors, setAuthors] = useState(false)
+    const[authors, setAuthors] = useState(true)
     const showAuthors = ()=>{
         setAuthors(true)
     }
@@ -23,7 +25,6 @@ export default function AdminPanel(){
     useEffect(()=>{
         dispatch(getCompanies(token))
     }, [])
-    console.log(adminStoreAuthors)
     return (
         <div>
             <div className="todo">
@@ -44,41 +45,43 @@ export default function AdminPanel(){
             className={`buttonAdmin${authors ? "": "1"}`}
             onClick={showAuthors}
           >
-            Authors
+            Companies
           </button>
 
           <button className={`buttonAdmin${authors ? "1" : ""}`} onClick={showCompanies}>
             {" "}
-            Companies{" "}
+            Authors{" "}
           </button>
             </div>
             {authors?(
-                <div className="spaceCard">
-                    {adminStoreAuthors?.map((card, index)=>{
-                        return (
-                            <div key={index} className="card">
-                                <div className="directionCard">
-                                    <h2>{card.name}</h2>
-                                    <button>dissable</button>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>):
-                <div>
-                    {adminStoreCompanies?.map((card, index)=>{
-                        return (
-                            <div key={index} className="card">
-                                <div className="directionCard">
-                                    <h2>{card.name}</h2>
-                                    <button>dissable</button>
-                                </div>
-                            </div>
-                        )
-                    })}
-                </div>}
+            adminStoreCompanies?.map((card, index)=>{
+                return(
+                    <div key={index}  className="tableAdmin">
+                    <tr className="tableMax">
+                    <td className="table">{card.name}</td>
+                    <td className="table">{card.website}</td>
+                    <td className="table"><img src={`${card.logo}`}></img></td>
+                    <td className="table"><BasicHooksExample/></td>
+                    </tr>
+                    </div>
+                )
+            })
+        ):adminStoreAuthors?.map((card,index)=>{
+            return(
+                <div key={index}  className="tableAdmin">
+                <tr className="tableMax">
+                <td className="tableName">{card.name}</td>
+                <td className="tableDate">{card.date}</td>
+                <td className="tableCity">{card.city},{card.country}</td>
+                <td className="tableImage"><img src={`${card.photo}`} className="imageAuthorsAdmin"></img></td>
+                <td className="table"><BasicHooksExample/></td>
+                </tr>
+                </div>
+            )
+            })}
                 </div>
             </div>
         </div>
+        
     )
 }

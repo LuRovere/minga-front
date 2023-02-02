@@ -23,6 +23,7 @@ const adminReducers2 = createReducer(initialState2, (builder)=>{
             companies: action.payload.response.companies,
             inputText: action.payload.message
         }
+        return newState
     })
 })
 

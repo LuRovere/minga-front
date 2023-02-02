@@ -10,12 +10,13 @@
     align-items: center;
     font-size: 25px;
     color: white;
-    margin: 150px;
+    margin: 50px;
 }
 .background{
     background-image: url('https://images.pexels.com/photos/3182822/pexels-photo-3182822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,11 +67,34 @@
     justify-content: center;
     width: 80%;
     align-items: center;
-    padding: 20px;
+    margin-top: -75px;
+    background-color: white;
 }
 .entities{
     color: #4338CA;
     border-bottom: 3px solid #4338CA;
     height: 25px;
-    margin-top: 50px;
+}
+.tableAdmin{
+    width: 70%;
+    display: flex;
+    padding: 20px;
+}
+.table{
+    border: 1px solid floralwhite;
+}
+.tableMax{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.imageAuthorsAdmin{
+    width: 30px;
+    height: 30px;
+    border-radius: 100px;
+}
+.tableImage, .tableName, .tableDate, .tableCity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

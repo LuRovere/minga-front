@@ -2,11 +2,11 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 import { API_URL as apiUrl } from "../../configs"
 
-const adminAuthors = createAsyncThunk('modificar_company_o_author', async(data, token, name)=>{
+const adminAuthors = createAsyncThunk('modificar_company_o_author', async(token)=>{
     try {
         let url = `${apiUrl}auth/role/author/:id`
         let headers = {headers: {'Authorization': `Bearer ${token}`}}
-        const response = await axios.put(url, data, headers)
+        const response = await axios.put(url,headers)
         return {
             succes: true,
             response: {data:response.data}
