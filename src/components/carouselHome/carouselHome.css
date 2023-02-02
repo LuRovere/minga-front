@@ -1,0 +1,49 @@
+.carousel-container {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+}
+.carousel-item {
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+.carousel-img {
+  width: 95%;
+  height: 10%;
+  max-width: 800px;
+  max-height: 350px;
+  border-radius: 2rem;
+}
+.carousel-title, .carousel-description {
+  margin-top: .5rem;
+}
+.carousel-title {
+  font-size: 1.5rem;
+  color: #222;
+}
+.carousel-description {
+  color: #9795A4;
+  text-align: center;
+  padding: 0 .7rem;
+}
+.carousel-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.carousel-button {
+  color: #9795A4;
+  font-size: 3rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color ease .5s;
+}
+.carousel-button:hover {
+  color: #555;
+}

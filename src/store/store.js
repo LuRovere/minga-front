@@ -11,6 +11,7 @@ import updateActions from "./authorscompany/actions";
 import allcomicsreducers from "./getAllComics/reducer.getAllComics";
 import getIdReducer from "../store/getIdActions/getIdReducer";
 import chapterReducerPato from "./chaptersInputs/reducers";
+import carouselReducers from "./carousel/reducers";
 
 export const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ export const store = configureStore({
     authorsncompany: updateActions,
     allComics: allcomicsreducers,
     id: getIdReducer,
-    chapterReducerPato:chapterReducerPato
+    chapterReducerPato:chapterReducerPato,
+    carousel: carouselReducers
   }
 })
