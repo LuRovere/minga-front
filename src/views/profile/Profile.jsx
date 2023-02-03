@@ -1,11 +1,11 @@
 import React from 'react'
 import Navbar from '../../layout/Navbar'
-import Alerts from '../../components/updateAuthorAlert/Alert'
 import Form from '../../components/ProfileForm'
 import { useSelector } from 'react-redux'
 import './profile.css'
 export default function Profile() {
   const info = useSelector((store) => store.auth)
+  console.log(info)
   const {is_author, is_company} = info
   let data = []
   let name = ""
@@ -27,7 +27,6 @@ export default function Profile() {
                   <img src={info.photo} alt="profileImg"  className='profileImage'/>
               </div>
             <Form data={data} name={name}/>
-            <Alerts/>
             </div>
         </div>
         :

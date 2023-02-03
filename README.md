@@ -10,6 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - redux toolkit:`npm install @reduxjs/toolkit`
 - react reduce: `npm install react-redux`
 - react router: `npm install react-router-dom`
+- react Switch: `npm install react-switch`
 
 In the project directory, you can run:
 
